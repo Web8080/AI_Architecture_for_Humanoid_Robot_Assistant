@@ -1,0 +1,102 @@
+# ==============================================================================
+# Dockerfile for NLP Service - Humanoid Robot Assistant
+# Optimized for NVIDIA Jetson Orin AGX and cloud deployment
+# ==============================================================================
+
+# Base image with CUDA support
+# For Jetson: Use l4t-pytorch base from NVIDIA NGC
+# For cloud: Use standard PyTorch CUDA image
+ARG BASE_IMAGE=nvcr.io/nvidia/l4t-pytorch:r35.2.1-pth2.0-py3
+FROM ${BASE_IMAGE}
+
+# Metadata
+LABEL maintainer="robot-ai-team@example.com"
+LABEL description="NLP Service for Humanoid Robot Assistant"
+LABEL version="0.1.0"
+
+# Set environment variables
+ENV PYTHONUNBUFFERED=1 \
+    DEBIAN_FRONTEND=noninteractive \
+    TZ=UTC \
+    LANG=C.UTF-8 \
+    LC_ALL=C.UTF-8
+
+# Working directory
+WORKDIR /app
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    cmake \
+    git \
+    wget \
+    curl \
+    ca-certificates \
+    libsndfile1 \
+    ffmpeg \
+    libsm6 \
+    libxext6 \
+    libxrender-dev \
+    libgomp1 \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copy requirements first (for better caching)
+COPY requirements.txt /app/requirements.txt
+
+# Install Python dependencies
+RUN pip install --no-cache-dir --upgrade pip setuptools wheel && \
+    pip install --no-cache-dir -r requirements.txt
+
+# Install spaCy language model
+RUN python -m spacy download en_core_web_sm
+
+# Copy application code
+COPY src/nlp/ /app/src/nlp/
+COPY src/core/ /app/src/core/
+COPY src/api/ /app/src/api/
+COPY configs/ /app/configs/
+
+# Copy models (in production, mount as volume or download from registry)
+# COPY models/nlp/ /app/models/nlp/
+
+# Create necessary directories
+RUN mkdir -p /app/logs /app/data /app/models/nlp
+
+# Set Python path
+ENV PYTHONPATH=/app:$PYTHONPATH
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
+    CMD curl -f http://localhost:8001/health || exit 1
+
+# Expose port
+EXPOSE 8001
+
+# Default command (can be overridden)
+CMD ["python", "-m", "uvicorn", "services.nlp_service.src.main:app", \
+     "--host", "0.0.0.0", "--port", "8001", "--workers", "2"]
+
+# ==============================================================================
+# Build Instructions:
+# ==============================================================================
+#
+# For Jetson Orin (ARM64):
+# docker build -t robot-nlp-service:jetson \
+#   --build-arg BASE_IMAGE=nvcr.io/nvidia/l4t-pytorch:r35.2.1-pth2.0-py3 \
+#   -f deployment/docker/Dockerfile.nlp_service .
+#
+# For Cloud (x86_64):
+# docker build -t robot-nlp-service:cloud \
+#   --build-arg BASE_IMAGE=pytorch/pytorch:2.1.0-cuda12.1-cudnn8-runtime \
+#   -f deployment/docker/Dockerfile.nlp_service .
+#
+# Run:
+# docker run -d --gpus all --name nlp-service \
+#   -p 8001:8001 \
+#   -v $(pwd)/models:/app/models \
+#   -v $(pwd)/configs:/app/configs \
+#   -e OPENAI_API_KEY=${OPENAI_API_KEY} \
+#   robot-nlp-service:jetson
+#
+# ==============================================================================
+

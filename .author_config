@@ -1,0 +1,36 @@
+# Author Configuration for Humanoid Robot Assistant Project
+# All code files should use this author information
+
+AUTHOR_NAME="Victor Ibhafidon"
+AUTHOR_ORGANIZATION="Xtainless Technologies"
+AUTHOR_EMAIL="info@xtainlesstech.com"
+PROJECT_NAME="Humanoid Robot Assistant - AI Brain"
+COPYRIGHT_YEAR="2025"
+LICENSE="MIT"  # Update as needed
+
+# Code header template for Python files:
+# """
+# [Module Name] - [Brief Description]
+#
+# [Detailed description of what this module does]
+#
+# Author: Victor Ibhafidon
+# Organization: Xtainless Technologies
+# Email: info@xtainlesstech.com
+# Date: YYYY-MM-DD
+# License: MIT
+# """
+
+# Code header template for other languages:
+# /**
+#  * [Module Name] - [Brief Description]
+#  *
+#  * [Detailed description]
+#  *
+#  * Author: Victor Ibhafidon
+#  * Organization: Xtainless Technologies
+#  * Email: info@xtainlesstech.com
+#  * Date: YYYY-MM-DD
+#  * License: MIT
+#  */
+

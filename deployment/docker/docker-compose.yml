@@ -1,0 +1,341 @@
+version: '3.8'
+
+# ==============================================================================
+# Docker Compose - Humanoid Robot Assistant (Development)
+# ==============================================================================
+
+services:
+  # ----------------------------------------------------------------------------
+  # Orchestrator Service - Main coordinator
+  # ----------------------------------------------------------------------------
+  orchestrator:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.orchestrator
+    container_name: robot-orchestrator
+    ports:
+      - "8000:8000"
+    environment:
+      - MONGODB_URI=${MONGODB_URI}
+      - REDIS_HOST=redis
+      - POSTGRES_HOST=postgres
+      - LOG_LEVEL=INFO
+    volumes:
+      - ../../configs:/app/configs:ro
+      - ../../logs:/app/logs
+    depends_on:
+      - redis
+      - mongodb
+      - postgres
+    networks:
+      - robot-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 2G
+        reservations:
+          memory: 1G
+
+  # ----------------------------------------------------------------------------
+  # NLP Service
+  # ----------------------------------------------------------------------------
+  nlp_service:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.nlp_service
+    container_name: robot-nlp-service
+    ports:
+      - "8001:8001"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - MONGODB_URI=${MONGODB_URI}
+      - REDIS_HOST=redis
+    volumes:
+      - ../../models/nlp:/app/models/nlp:ro
+      - ../../configs:/app/configs:ro
+      - ../../logs:/app/logs
+    depends_on:
+      - redis
+      - mongodb
+    networks:
+      - robot-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # ----------------------------------------------------------------------------
+  # Vision Service
+  # ----------------------------------------------------------------------------
+  vision_service:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.vision_service
+    container_name: robot-vision-service
+    ports:
+      - "8002:8002"
+    environment:
+      - REDIS_HOST=redis
+    volumes:
+      - ../../models/vision:/app/models/vision:ro
+      - ../../configs:/app/configs:ro
+      - ../../logs:/app/logs
+      - /dev:/dev  # Access cameras
+    privileged: true  # Required for camera access
+    depends_on:
+      - redis
+    networks:
+      - robot-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # ----------------------------------------------------------------------------
+  # Multimodal Service
+  # ----------------------------------------------------------------------------
+  multimodal_service:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.multimodal_service
+    container_name: robot-multimodal-service
+    ports:
+      - "8003:8003"
+    environment:
+      - REDIS_HOST=redis
+    volumes:
+      - ../../models/multimodal:/app/models/multimodal:ro
+      - ../../configs:/app/configs:ro
+      - ../../logs:/app/logs
+    depends_on:
+      - redis
+    networks:
+      - robot-network
+    restart: unless-stopped
+    deploy:
+      resources:
+        limits:
+          memory: 8G
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+
+  # ----------------------------------------------------------------------------
+  # Planning Service
+  # ----------------------------------------------------------------------------
+  planning_service:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.planning_service
+    container_name: robot-planning-service
+    ports:
+      - "8004:8004"
+    environment:
+      - REDIS_HOST=redis
+    volumes:
+      - ../../configs:/app/configs:ro
+      - ../../logs:/app/logs
+    depends_on:
+      - redis
+      - vision_service
+      - multimodal_service
+    networks:
+      - robot-network
+    restart: unless-stopped
+
+  # ----------------------------------------------------------------------------
+  # Memory Service
+  # ----------------------------------------------------------------------------
+  memory_service:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.memory_service
+    container_name: robot-memory-service
+    ports:
+      - "8005:8005"
+    environment:
+      - MONGODB_URI=${MONGODB_URI}
+      - POSTGRES_HOST=postgres
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - REDIS_HOST=redis
+    volumes:
+      - ../../configs:/app/configs:ro
+      - ../../logs:/app/logs
+      - memory-data:/app/data
+    depends_on:
+      - mongodb
+      - postgres
+      - redis
+    networks:
+      - robot-network
+    restart: unless-stopped
+
+  # ----------------------------------------------------------------------------
+  # Safety Service (Critical - Always Running)
+  # ----------------------------------------------------------------------------
+  safety_service:
+    build:
+      context: ../..
+      dockerfile: deployment/docker/Dockerfile.safety_service
+    container_name: robot-safety-service
+    ports:
+      - "8007:8007"
+    environment:
+      - REDIS_HOST=redis
+      - LOG_LEVEL=DEBUG  # Always verbose for safety
+    volumes:
+      - ../../configs:/app/configs:ro
+      - ../../logs:/app/logs
+    depends_on:
+      - redis
+    networks:
+      - robot-network
+    restart: always  # Critical service
+    deploy:
+      resources:
+        reservations:
+          cpus: '2'  # Ensure CPU availability
+
+  # ----------------------------------------------------------------------------
+  # Databases
+  # ----------------------------------------------------------------------------
+  
+  # MongoDB - For episodic memory, logs, sessions
+  mongodb:
+    image: mongo:7.0
+    container_name: robot-mongodb
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=${MONGO_USER:-admin}
+      - MONGO_INITDB_ROOT_PASSWORD=${MONGO_PASSWORD:-changeme}
+    volumes:
+      - mongodb-data:/data/db
+      - mongodb-config:/data/configdb
+    networks:
+      - robot-network
+    restart: unless-stopped
+
+  # PostgreSQL - For semantic memory, structured data
+  postgres:
+    image: postgres:16
+    container_name: robot-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER:-robot}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD:-changeme}
+      - POSTGRES_DB=robot_semantic
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - robot-network
+    restart: unless-stopped
+
+  # Redis - For caching, working memory, pub/sub
+  redis:
+    image: redis:7-alpine
+    container_name: robot-redis
+    ports:
+      - "6379:6379"
+    command: redis-server --appendonly yes --requirepass ${REDIS_PASSWORD:-changeme}
+    volumes:
+      - redis-data:/data
+    networks:
+      - robot-network
+    restart: unless-stopped
+
+  # ----------------------------------------------------------------------------
+  # Monitoring & Observability
+  # ----------------------------------------------------------------------------
+  
+  # Prometheus - Metrics collection
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: robot-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./prometheus.yml:/etc/prometheus/prometheus.yml:ro
+      - prometheus-data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+    networks:
+      - robot-network
+    restart: unless-stopped
+
+  # Grafana - Metrics visualization
+  grafana:
+    image: grafana/grafana:latest
+    container_name: robot-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_PASSWORD=${GRAFANA_PASSWORD:-admin}
+    volumes:
+      - grafana-data:/var/lib/grafana
+      - ./grafana/dashboards:/etc/grafana/provisioning/dashboards:ro
+    networks:
+      - robot-network
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+
+# ==============================================================================
+# Networks
+# ==============================================================================
+networks:
+  robot-network:
+    driver: bridge
+
+# ==============================================================================
+# Volumes
+# ==============================================================================
+volumes:
+  mongodb-data:
+  mongodb-config:
+  postgres-data:
+  redis-data:
+  memory-data:
+  prometheus-data:
+  grafana-data:
+
+# ==============================================================================
+# Usage:
+# ==============================================================================
+#
+# 1. Create .env file with required variables:
+#    cp .env.example .env
+#    # Edit .env with your API keys
+#
+# 2. Start all services:
+#    docker-compose up -d
+#
+# 3. Check logs:
+#    docker-compose logs -f nlp_service
+#
+# 4. Stop all services:
+#    docker-compose down
+#
+# 5. Stop and remove volumes (WARNING: deletes data):
+#    docker-compose down -v
+#
+# ==============================================================================
+
