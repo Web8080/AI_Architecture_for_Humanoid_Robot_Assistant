@@ -82,57 +82,136 @@ nlp:
     max_sequence_length: 128
   
   entity_extractor:
-    model_path: "models/nlp/ner_bert_v1.onnx"
-    use_spacy_fallback: true
-    spacy_model: "en_core_web_sm"
+    # Tier 1: BERT-based NER (PRIMARY)
+    tier1_model: "dslim/bert-base-NER"
+    tier1_enabled: true
+    # Tier 2: Custom fine-tuned model (FALLBACK)
+    tier2_model_path: null  # Path to custom model when available
+    tier2_enabled: false
+    # Tier 3: spaCy (FALLBACK)
+    tier3_model: "en_core_web_trf"  # or en_core_web_sm for CPU
+    tier3_enabled: true
+    confidence_threshold: 0.7
+    use_gpu: null  # null = auto-detect
   
   dialogue:
+    # Tier 1: Custom State Machine + Redis (PRIMARY)
+    tier1_enabled: true
+    redis_host: "localhost"
+    redis_port: 6379
+    redis_password: null
     session_ttl_minutes: 15
+    # Tier 2: LangChain Memory (CONTEXT TRACKING)
+    tier2_langchain_enabled: true
     context_window_turns: 10
+    # Tier 3: In-memory fallback (AUTO)
     max_clarifications: 3
     enable_proactive_suggestions: true
   
   emotion:
     enabled: true
-    model_path: "models/nlp/emotion_distilbert_v1.onnx"
+    # Tier 1: Emotion Transformer (PRIMARY)
+    tier1_model: "j-hartmann/emotion-english-distilroberta-base"
+    tier1_enabled: true
+    # Tier 2: Sentiment Analysis (FALLBACK)
+    tier2_model: "cardiffnlp/twitter-roberta-base-sentiment-latest"
+    tier2_enabled: true
+    # Tier 3: VADER Lexicon (FALLBACK)
+    tier3_vader_enabled: true
     track_history: true
-    history_length: 5
+    history_length: 10
+    confidence_threshold: 0.5
+    use_gpu: null  # null = auto-detect
   
   rag:
     enabled: true
-    vector_store: "faiss"  # faiss, milvus, chromadb
+    # Vector Store Selection
+    vector_store_type: "faiss"  # faiss or qdrant
+    # Framework Selection
+    use_langchain: true  # PRIMARY
+    use_llamaindex: false  # FALLBACK
+    # Embedding Model
     embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+    use_gpu: null  # null = auto-detect
+    # Vector Store Settings
+    faiss:
+      persist_dir: "./data/vector_store/faiss"
+      index_type: "Flat"  # Flat, IVF, HNSW
+    qdrant:
+      host: "localhost"
+      port: 6333
+      collection_name: "robot_knowledge"
+      use_memory: true  # In-memory for dev
+    # Retrieval Settings
+    chunk_size: 512
+    chunk_overlap: 50
+    top_k: 5
+    score_threshold: 0.7
     top_k_retrieval: 5
     rerank: false
   
   llm:
-    edge:
-      model: "llama-2-7b-chat-gptq"
-      model_path: "models/nlp/llama-2-7b-chat-gptq"
-      quantization: "4bit"
+    # Tier 1: OpenAI (CLOUD - PRIMARY)
+    tier1_openai:
+      enabled: true
+      api_key: "${OPENAI_API_KEY}"  # From environment
+      model: "gpt-4o-mini"  # gpt-4o-mini, gpt-4-turbo, gpt-4
       max_tokens: 256
       temperature: 0.7
-      context_window: 4096
-    cloud:
-      provider: "openai"  # openai, anthropic, together, custom
-      model: "gpt-4-turbo"
-      max_tokens: 512
+      timeout: 30
+    # Tier 2: Ollama (LOCAL - FALLBACK)
+    tier2_ollama:
+      enabled: true
+      model: "llama3.2:3b"  # llama3.2:3b, phi3:mini, mistral:7b
+      host: "http://localhost:11434"
+      max_tokens: 256
       temperature: 0.7
-      fallback_to_edge: true
+    # Tier 3: Template-based (FALLBACK)
+    tier3_template:
+      enabled: true  # Always enabled
+    # General Settings
+    system_prompt: "You are a helpful humanoid robot assistant with vision and manipulation capabilities."
+    use_rag_context: true
   
   asr:
-    model: "whisper-medium"  # tiny, base, small, medium, large
-    model_path: "models/nlp/whisper-medium.pt"
-    language: "en"
+    # Tier 1: Faster-Whisper (PRIMARY - Optimized Whisper.cpp)
+    tier1_whisper:
+      enabled: true
+      model_size: "base"  # tiny, base, small, medium, large
+      language: "en"
+      use_gpu: null  # null = auto-detect
+      compute_type: "int8"  # int8 (CPU), float16 (GPU)
+      beam_size: 5
+    # Tier 2: Vosk (FALLBACK - Lightweight, streaming)
+    tier2_vosk:
+      enabled: true
+      model_path: null  # Download from alphacephei.com/vosk/models
+      sample_rate: 16000
+    # General Settings
     vad_enabled: true
     vad_threshold: 0.5
     streaming: false
   
   tts:
-    model: "vits"  # vits, bark, tacotron2
-    voice: "friendly"  # neutral, friendly, professional
+    # Tier 1: ElevenLabs (CLOUD - PRIMARY - Best Quality)
+    tier1_elevenlabs:
+      enabled: true
+      api_key: "${ELEVENLABS_API_KEY}"  # From environment
+      voice: "Adam"  # Adam, Bella, Antoni, etc.
+      model: "eleven_monolingual_v1"
+    # Tier 2: Coqui TTS (LOCAL - Good Quality)
+    tier2_coqui:
+      enabled: true
+      model: "tts_models/en/ljspeech/vits"
+      use_gpu: null  # null = auto-detect
+    # Tier 3: pyttsx3 (LOCAL - Fast Fallback)
+    tier3_pyttsx3:
+      enabled: true
+      rate: 175  # Words per minute
+      voice: null  # null = default system voice
+    # General Settings
+    output_dir: "./audio_output"
     speaking_rate: 1.0
-    model_path: "models/nlp/vits_v1"
 
 # Computer Vision
 vision:

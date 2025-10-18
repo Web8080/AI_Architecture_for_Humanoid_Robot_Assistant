@@ -24,10 +24,23 @@ huggingface-hub>=0.19.0
 spacy>=3.7.0
 nltk>=3.8.1
 python-dateutil>=2.8.2
+vaderSentiment>=3.3.2  # Sentiment analysis fallback (Emotion Tier 3)
+python-statemachine>=2.1.0  # State machine for dialogue management
 
-# Speech
-openai-whisper>=20231117  # ASR
-TTS>=0.20.0  # Text-to-Speech (Coqui TTS)
+# Speech - ASR
+openai-whisper>=20231117  # OpenAI Whisper (ASR)
+faster-whisper>=0.10.0  # Optimized Whisper.cpp wrapper (PRIMARY ASR)
+vosk>=0.3.45  # Lightweight ASR for streaming (FALLBACK)
+
+# Speech - TTS
+TTS>=0.20.0  # Coqui TTS (LOCAL TTS - Tier 2)
+elevenlabs>=0.2.26  # ElevenLabs TTS (CLOUD TTS - Tier 1)
+pyttsx3>=2.90  # Offline TTS fallback (Tier 3)
+
+# Audio Processing
+soundfile>=0.12.1
+pydub>=0.25.1
+pyaudio>=0.2.14  # For microphone input
 
 # Computer Vision
 opencv-python>=4.8.1
@@ -50,9 +63,18 @@ rclpy  # ROS2 Python client (install via ROS2)
 # geometry_msgs, sensor_msgs, etc. installed with ROS2
 
 # Vector Databases & Search
-faiss-gpu>=1.7.4  # or faiss-cpu for CPU-only
+faiss-gpu>=1.7.4  # or faiss-cpu for CPU-only (PRIMARY for RAG)
 pymilvus>=2.3.0  # Milvus client
 chromadb>=0.4.15  # Alternative vector DB
+qdrant-client>=1.7.0  # Qdrant vector database (ALTERNATIVE)
+
+# RAG & LLM Frameworks
+langchain>=0.1.0  # RAG orchestration (PRIMARY)
+langchain-community>=0.0.13
+langchain-openai>=0.0.5
+llama-index>=0.9.0  # Alternative RAG framework (FALLBACK)
+openai>=1.6.0  # OpenAI API (LLM Tier 1)
+ollama>=0.1.0  # Ollama Python client (LLM Tier 2)
 
 # Data Management & MLOps
 mlflow>=2.8.0
