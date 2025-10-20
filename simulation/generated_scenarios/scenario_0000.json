@@ -1,0 +1,55 @@
+{
+  "image_id": 0,
+  "file_name": "scenario_0000.png",
+  "width": 640,
+  "height": 480,
+  "objects": [
+    {
+      "bbox": [
+        408,
+        229,
+        533,
+        432
+      ],
+      "class": "person",
+      "class_id": 26,
+      "depth_m": 1.2156250000000002,
+      "visible": true,
+      "occlusion": 0.0
+    },
+    {
+      "bbox": [
+        78,
+        202,
+        151,
+        280
+      ],
+      "class": "hand",
+      "class_id": 28,
+      "depth_m": 1.13125,
+      "visible": true,
+      "occlusion": 0.0
+    },
+    {
+      "bbox": [
+        157,
+        211,
+        282,
+        399
+      ],
+      "class": "person",
+      "class_id": 26,
+      "depth_m": 1.159375,
+      "visible": true,
+      "occlusion": 0.0
+    }
+  ],
+  "scene_type": "human",
+  "lighting": "normal",
+  "metadata": {
+    "config": "ScenarioConfig(name='human_handoff_0000', num_objects=3, object_types=['person', 'hand', 'cup'], lighting='normal', occlusion_level=0.2948194798720777, clutter_level=0.17034793945131055, camera_height_m=0.8144149267484692, camera_angle_deg=24.77144493120649)",
+    "num_objects": 3,
+    "camera_height_m": 0.8144149267484692,
+    "camera_angle_deg": 24.77144493120649
+  }
+}

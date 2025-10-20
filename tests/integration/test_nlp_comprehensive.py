@@ -1,9 +1,56 @@
 """
 Comprehensive NLP Module Testing Script
-Tests all components with their multi-tier fallback systems
+
+PURPOSE:
+    Validates all Natural Language Processing components in the humanoid robot AI system.
+    Ensures each component works independently and as part of the integrated pipeline.
+
+PIPELINE CONTEXT:
+    NLP Module is the first cognitive layer of the robot system:
+    
+    User Input → NLP Module → Understanding → Planning → Actions
+                     ↓
+        ┌────────────┴────────────┐
+        │  Intent Classification  │  → What does user want?
+        │  Entity Extraction      │  → What objects/locations?
+        │  Emotion Detection      │  → User emotional state?
+        │  Dialogue Management    │  → Conversation context?
+        │  RAG System            │  → Knowledge retrieval
+        │  LLM Integration       │  → Response generation
+        │  ASR/TTS               │  → Speech I/O
+        └─────────────────────────┘
+
+HOW IT WORKS:
+    1. Tests each component independently (unit tests)
+    2. Validates multi-tier fallback (Tier 1 → Tier 2 → Tier 3)
+    3. Measures latency for real-time requirements
+    4. Checks end-to-end pipeline integration
+    5. Ensures 100% system availability (never crashes)
+
+TESTING STRATEGY:
+    - Unit Tests: Each component in isolation
+    - Integration Tests: Full NLP service pipeline
+    - Fallback Tests: Validates graceful degradation
+    - Performance Tests: Latency benchmarks
+    - Availability Tests: System resilience
+
+USAGE:
+    python scripts/test_nlp_comprehensive.py
+
+INTEGRATION WITH PIPELINE:
+    - CI/CD: Runs on every commit
+    - Pre-deployment: Must pass before releasing
+    - Monitoring: Baseline for production metrics
+    - Debugging: Identifies failing components
+
+RELATED FILES:
+    - src/nlp/nlp_service.py: Main NLP orchestrator
+    - configs/base/system_config.yaml: Configuration
+    - TEST_RESULTS.md: Historical test results
 
 Author: Victor Ibhafidon
 Date: October 2025
+Version: 1.0
 """
 
 import sys

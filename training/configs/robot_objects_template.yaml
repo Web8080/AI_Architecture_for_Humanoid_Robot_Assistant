@@ -1,0 +1,21 @@
+names:
+- cup
+- plate
+- bowl
+- spoon
+- fork
+- bottle
+- phone
+- remote
+- book
+- keys
+- person
+- chair
+- table
+- door
+- box
+nc: 15
+path: /path/to/robot_dataset
+test: images/test
+train: images/train
+val: images/val

@@ -1,0 +1,42 @@
+{
+  "image_id": 40,
+  "file_name": "scenario_0040.png",
+  "width": 640,
+  "height": 480,
+  "objects": [
+    {
+      "bbox": [
+        322,
+        260,
+        374,
+        326
+      ],
+      "class": "bottle",
+      "class_id": 6,
+      "depth_m": 1.3125,
+      "visible": true,
+      "occlusion": 0.0
+    },
+    {
+      "bbox": [
+        467,
+        213,
+        564,
+        301
+      ],
+      "class": "plate",
+      "class_id": 1,
+      "depth_m": 1.165625,
+      "visible": true,
+      "occlusion": 0.0
+    }
+  ],
+  "scene_type": "kitchen",
+  "lighting": "normal",
+  "metadata": {
+    "config": "ScenarioConfig(name='kitchen_fetch_0040', num_objects=2, object_types=['cup', 'plate', 'spoon', 'bottle'], lighting='normal', occlusion_level=0.15624014512556617, clutter_level=0.4438675620323841, camera_height_m=0.9210423339891389, camera_angle_deg=23.695347787165048)",
+    "num_objects": 2,
+    "camera_height_m": 0.9210423339891389,
+    "camera_angle_deg": 23.695347787165048
+  }
+}

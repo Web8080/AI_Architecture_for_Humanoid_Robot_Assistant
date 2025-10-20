@@ -1,0 +1,42 @@
+{
+  "image_id": 27,
+  "file_name": "scenario_0027.png",
+  "width": 640,
+  "height": 480,
+  "objects": [
+    {
+      "bbox": [
+        144,
+        231,
+        235,
+        324
+      ],
+      "class": "box",
+      "class_id": 8,
+      "depth_m": 1.221875,
+      "visible": true,
+      "occlusion": 0.0
+    },
+    {
+      "bbox": [
+        465,
+        195,
+        534,
+        248
+      ],
+      "class": "box",
+      "class_id": 8,
+      "depth_m": 1.109375,
+      "visible": true,
+      "occlusion": 0.0
+    }
+  ],
+  "scene_type": "navigation",
+  "lighting": "normal",
+  "metadata": {
+    "config": "ScenarioConfig(name='navigation_cluttered_0027', num_objects=2, object_types=['chair', 'table', 'box', 'bag'], lighting='normal', occlusion_level=0.43774815580940957, clutter_level=0.7342145935831758, camera_height_m=1.1157213099546788, camera_angle_deg=22.34209069785688)",
+    "num_objects": 2,
+    "camera_height_m": 1.1157213099546788,
+    "camera_angle_deg": 22.34209069785688
+  }
+}

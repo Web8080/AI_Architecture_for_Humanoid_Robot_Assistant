@@ -1,0 +1,42 @@
+{
+  "image_id": 16,
+  "file_name": "scenario_0016.png",
+  "width": 640,
+  "height": 480,
+  "objects": [
+    {
+      "bbox": [
+        280,
+        394,
+        310,
+        450
+      ],
+      "class": "cup",
+      "class_id": 0,
+      "depth_m": 1.73125,
+      "visible": false,
+      "occlusion": 0.4
+    },
+    {
+      "bbox": [
+        198,
+        283,
+        278,
+        372
+      ],
+      "class": "box",
+      "class_id": 8,
+      "depth_m": 1.384375,
+      "visible": true,
+      "occlusion": 0.0
+    }
+  ],
+  "scene_type": "occlusion",
+  "lighting": "normal",
+  "metadata": {
+    "config": "ScenarioConfig(name='occlusion_test_0016', num_objects=2, object_types=['cup', 'plate', 'book', 'box'], lighting='normal', occlusion_level=0.7678879768999858, clutter_level=0.4527337867215927, camera_height_m=0.9405229995709558, camera_angle_deg=18.873314178325987)",
+    "num_objects": 2,
+    "camera_height_m": 0.9405229995709558,
+    "camera_angle_deg": 18.873314178325987
+  }
+}

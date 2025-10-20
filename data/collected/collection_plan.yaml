@@ -1,0 +1,77 @@
+duration_weeks: 8
+total_scenarios: 10
+weekly_schedule:
+- week: 1
+  focus: Core Operations
+  scenarios:
+  - id: P1_001
+    name: Fetch Cup from Counter
+    description: Robot identifies and fetches a cup from kitchen counter
+    target_images: 500
+    estimated_hours: 3.0
+- week: 2
+  focus: Core Operations
+  scenarios:
+  - id: P1_002
+    name: Multi-Object Table Scene
+    description: Multiple objects on table - identification and localization
+    target_images: 800
+    estimated_hours: 4.5
+- week: 3
+  focus: Core Operations
+  scenarios:
+  - id: P1_003
+    name: Navigation Obstacle Detection
+    description: Detect and avoid obstacles during navigation
+    target_images: 600
+    estimated_hours: 3.5
+- week: 4
+  focus: Core Operations
+  scenarios:
+  - id: P1_004
+    name: Human-Robot Object Handoff
+    description: Robot hands object to human or receives from human
+    target_images: 400
+    estimated_hours: 3.0
+- week: 5
+  focus: Extended Operations
+  scenarios:
+  - id: P2_001
+    name: Low Light Object Detection
+    description: Detect objects in low light/evening conditions
+    target_images: 300
+    estimated_hours: 2.5
+  - id: P2_003
+    name: Transparent/Reflective Objects
+    description: Glass cups, mirrors, metallic objects
+    target_images: 200
+    estimated_hours: 2.0
+- week: 6
+  focus: Extended Operations
+  scenarios:
+  - id: P2_002
+    name: Occluded Objects
+    description: Objects partially hidden by other objects
+    target_images: 400
+    estimated_hours: 3.0
+- week: 7
+  focus: Edge Cases
+  scenarios:
+  - id: P3_001
+    name: Similar Objects Disambiguation
+    description: Multiple similar objects - which one to fetch?
+    target_images: 200
+    estimated_hours: 2.0
+  - id: P3_003
+    name: Dynamic Scene - Moving Objects
+    description: Objects and people in motion
+    target_images: 0
+    estimated_hours: 4.0
+- week: 8
+  focus: Edge Cases
+  scenarios:
+  - id: P3_002
+    name: Failure Mode Collection
+    description: Deliberately collect scenarios where system fails
+    target_images: 150
+    estimated_hours: 2.5
