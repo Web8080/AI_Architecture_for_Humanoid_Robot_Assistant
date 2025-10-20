@@ -73,8 +73,8 @@ class ObjectDetector:
     """
     Multi-tier object detector with automatic fallback
     
-    Tier 1: YOLOv8-x (GPU) - Best accuracy, requires GPU
-    Tier 2: YOLOv8-nano (CPU) - Fast, CPU-optimized  
+    Tier 1: YOLOv11 (GPU) - Latest YOLO, best accuracy
+    Tier 2: YOLOv8-nano (CPU) - Proven stable, fast
     Tier 3: Haar Cascades - Classical CV, always works
     """
     
@@ -120,16 +120,16 @@ class ObjectDetector:
     
     def _init_tiers(self):
         """Initialize all available tiers"""
-        # Tier 1: YOLOv8-x (Best)
+        # Tier 1: YOLOv11 (Best - Latest YOLO)
         if self.tier1_enabled and YOLO_AVAILABLE:
             try:
-                model_path = self.config.get('tier1_model', 'yolov8x.pt')
+                model_path = self.config.get('tier1_model', 'yolo11n.pt')  # YOLOv11
                 logger.info(f"Loading Tier 1 model: {model_path}")
                 self.tier1_model = YOLO(model_path)
                 self.tier1_model.to(self.device)
-                logger.info(f" Tier 1 (YOLOv8-x) initialized on {self.device}")
+                logger.info(f" Tier 1 (YOLOv11) initialized on {self.device}")
             except Exception as e:
-                logger.warning(f"Tier 1 (YOLOv8-x) failed to load: {e}")
+                logger.warning(f"Tier 1 (YOLOv11) failed to load: {e}")
         
         # Tier 2: YOLOv8-nano (Fast)
         if self.tier2_enabled and YOLO_AVAILABLE:
