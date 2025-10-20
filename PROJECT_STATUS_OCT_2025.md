@@ -3,7 +3,7 @@
 **Author:** Victor Ibhafidon  
 **Date:** October 20, 2025  
 **Project:** AI Architecture for Humanoid Robot Assistant  
-**Perspective:** Senior ML Engineer (5-10 years experience)
+
 
 ---
 
@@ -714,7 +714,7 @@ class VisionService:
 
 **Islington Robotica, London (Apr 2025 - Jul 2025):**
 
-> "Designed and deployed cloud-edge hybrid AI system for humanoid robotics using agile development practices, collaborating with cross-functional teams (robotics engineers, data engineers, DevOps) and learning from senior ML engineers to build 14 microservices for NLP (8 components) and computer vision (6 components) with multi-tier fallback architecture; implemented YOLOv11, SAM, MiDaS, MediaPipe, CLIP for vision, and BERT, GPT-4, RAG with FAISS, Whisper for NLP, optimized with ONNX/TensorRT for NVIDIA Jetson achieving less than 100ms latency and 70%+ accuracy, enabling natural human-robot interaction through voice and vision"
+> "Designed and deployed cloud-edge hybrid AI system for humanoid robotics using agile development practices, collaborating with cross-functional teams (robotics engineers, data engineers, DevOps) and learning to build 14 microservices for NLP (8 components) and computer vision (6 components) with multi-tier fallback architecture; implemented YOLOv11, SAM, MiDaS, MediaPipe, CLIP for vision, and BERT, GPT-4, RAG with FAISS, Whisper for NLP, optimized with ONNX/TensorRT for NVIDIA Jetson achieving less than 100ms latency and 70%+ accuracy, enabling natural human-robot interaction through voice and vision"
 
 > "Engineered complete MLOps pipeline including simulation-based testing framework generating 130 synthetic scenarios, comprehensive evaluation system implementing standard CV metrics (mAP, IoU, precision/recall), YOLOv11 fine-tuning infrastructure, and systematic data collection strategy (10 scenarios, 8-week plan for 3,550 images); established CI/CD workflow, model versioning, and monitoring infrastructure following SOLID principles, achieving 100% test pass rate (15/15 tests) and 100% system availability through graceful degradation across 38 fallback tiers"
 
@@ -761,7 +761,6 @@ class VisionService:
 ### Professional Development:
 - Applied SOLID principles
 - Followed ML best practices
-- Senior engineer perspective
 - Industry-standard metrics
 - Complete documentation
 - Production-grade code
@@ -814,7 +813,7 @@ Successfully built a comprehensive AI system for humanoid robots with:
 - Simulation-based testing
 - Ready for fine-tuning and deployment
 
-The system demonstrates senior-level engineering with SOLID principles, comprehensive testing, proper metrics, and production-grade code quality. Ready for portfolio presentation and can credibly support CV claims for ML Engineer roles.
+The system demonstrates  engineering with SOLID principles, comprehensive testing, proper metrics, and production-grade code quality. Ready for portfolio presentation and can credibly support CV claims for ML Engineer roles.
 
 **Next Critical Step:** Collect real robot data and fine-tune models for domain adaptation.
 

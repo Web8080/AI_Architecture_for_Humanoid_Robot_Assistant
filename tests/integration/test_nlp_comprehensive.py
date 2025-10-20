@@ -57,8 +57,8 @@ import sys
 import os
 from pathlib import Path
 
-# Add src to path
-sys.path.insert(0, str(Path(__file__).parent.parent))
+# Add src to path (tests/integration/ -> project root)
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 import asyncio
 import logging
