@@ -56,6 +56,18 @@ detectron2 @ git+https://github.com/facebookresearch/detectron2.git
 # Depth & SLAM
 open3d>=0.17.0
 pyrealsense2>=2.54.0  # Intel RealSense SDK
+timm>=0.9.10  # Required for MiDaS depth estimation
+
+# Segmentation
+segment-anything>=1.0  # SAM (Segment Anything Model) - Tier 1
+
+# Pose Estimation
+mediapipe>=0.10.0  # MediaPipe Pose - Tier 1
+
+# Face Recognition
+insightface>=0.7.0  # InsightFace (ArcFace) - Tier 1
+face-recognition>=1.3.0  # dlib-based face recognition - Tier 3
+dlib>=19.24.0  # Required for face_recognition
 
 # Robotics
 # Note: ROS2 dependencies should be installed via rosdep
@@ -146,7 +158,6 @@ seaborn>=0.13.0
 plotly>=5.18.0
 
 # Multimodal Models
-timm>=0.9.10  # PyTorch Image Models
 einops>=0.7.0
 clip @ git+https://github.com/openai/CLIP.git
 

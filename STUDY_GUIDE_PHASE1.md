@@ -7,19 +7,19 @@
 
 ---
 
-## 🎯 Learning Objectives
+##  Learning Objectives
 
 By the end of this study period, you should be able to:
-- ✅ Understand transformer architectures (BERT, GPT, Llama)
-- ✅ Fine-tune models for custom intent classification
-- ✅ Implement RAG (Retrieval-Augmented Generation) systems
-- ✅ Optimize models for edge deployment (quantization, TensorRT)
-- ✅ Build production-ready APIs with FastAPI
-- ✅ Understand your existing chapo-bot architecture deeply
+-  Understand transformer architectures (BERT, GPT, Llama)
+-  Fine-tune models for custom intent classification
+-  Implement RAG (Retrieval-Augmented Generation) systems
+-  Optimize models for edge deployment (quantization, TensorRT)
+-  Build production-ready APIs with FastAPI
+-  Understand your existing chapo-bot architecture deeply
 
 ---
 
-## 📚 Week 1: Foundational Concepts
+##  Week 1: Foundational Concepts
 
 ### Day 1-2: Review Your Chapo-Bot Architecture
 
@@ -123,7 +123,7 @@ class SimpleIntentClassifier(nn.Module):
 
 ---
 
-## 📚 Week 2: Advanced NLP & RAG
+##  Week 2: Advanced NLP & RAG
 
 ### Day 8-10: Fine-Tuning Transformers
 
@@ -257,7 +257,7 @@ output = session.run(None, {"input": dummy_input.numpy()})
 
 ---
 
-## 📚 Week 3: Production APIs & MLOps
+##  Week 3: Production APIs & MLOps
 
 ### Day 15-17: FastAPI for ML Services
 
@@ -354,7 +354,7 @@ with mlflow.start_run():
 
 ---
 
-## 🎓 Optional (But Recommended)
+##  Optional (But Recommended)
 
 ### For Robotics Understanding (if time permits):
 
@@ -377,7 +377,7 @@ with mlflow.start_run():
 
 ---
 
-## 🛠️ Hands-On Practice (MOST IMPORTANT)
+##  Hands-On Practice (MOST IMPORTANT)
 
 ### Project 1: Build a Simple Intent Classifier (Weekend Project)
 
@@ -412,7 +412,7 @@ with mlflow.start_run():
 
 ---
 
-## 📖 Key Papers to Read (From Our Bibliography)
+##  Key Papers to Read (From Our Bibliography)
 
 **Priority 1 (Must Read)**:
 1. **BERT** (Devlin et al., 2019) - 30 min
@@ -438,7 +438,7 @@ with mlflow.start_run():
 
 ---
 
-## 💻 Setup Your Development Environment
+##  Setup Your Development Environment
 
 ### Essential Tools
 
@@ -460,7 +460,7 @@ python -m spacy download en_core_web_sm
 # 3. Test installations
 python -c "import torch; print('PyTorch:', torch.__version__)"
 python -c "import transformers; print('Transformers:', transformers.__version__)"
-python -c "from sentence_transformers import SentenceTransformer; print('✓ Sentence Transformers')"
+python -c "from sentence_transformers import SentenceTransformer; print(' Sentence Transformers')"
 ```
 
 ### Recommended IDE Setup
@@ -479,7 +479,7 @@ python -c "from sentence_transformers import SentenceTransformer; print('✓ Sen
 
 ---
 
-## 📝 Study Checklist
+##  Study Checklist
 
 ### Week 1: Foundations
 - [ ] Review chapo-bot architecture (4 hours)
@@ -516,7 +516,7 @@ python -c "from sentence_transformers import SentenceTransformer; print('✓ Sen
 
 ---
 
-## 🎯 Conceptual Understanding Priorities
+##  Conceptual Understanding Priorities
 
 ### Must Understand (Critical):
 
@@ -562,7 +562,7 @@ python -c "from sentence_transformers import SentenceTransformer; print('✓ Sen
 
 ---
 
-## 🧪 Practical Mini-Projects Before We Code
+##  Practical Mini-Projects Before We Code
 
 ### Mini-Project 1: Chapo-Bot Extension (2-4 hours)
 
@@ -608,7 +608,7 @@ python -c "from sentence_transformers import SentenceTransformer; print('✓ Sen
 
 ---
 
-## 📊 Progress Tracking
+##  Progress Tracking
 
 Create a study log:
 
@@ -625,32 +625,32 @@ Create a study log:
 
 ---
 
-## 🎯 What You Should Be Able to Do After 3 Weeks
+##  What You Should Be Able to Do After 3 Weeks
 
 ### Coding Skills:
-- ✅ Fine-tune BERT for any classification task
-- ✅ Build RAG system with FAISS
-- ✅ Convert PyTorch → ONNX
-- ✅ Create FastAPI endpoints
-- ✅ Containerize ML services
-- ✅ Track experiments with MLflow
+-  Fine-tune BERT for any classification task
+-  Build RAG system with FAISS
+-  Convert PyTorch → ONNX
+-  Create FastAPI endpoints
+-  Containerize ML services
+-  Track experiments with MLflow
 
 ### Conceptual Understanding:
-- ✅ How transformers work (attention, self-attention)
-- ✅ Why RAG prevents hallucination
-- ✅ How to optimize models for edge
-- ✅ Microservices architecture for AI
-- ✅ Production ML best practices
+-  How transformers work (attention, self-attention)
+-  Why RAG prevents hallucination
+-  How to optimize models for edge
+-  Microservices architecture for AI
+-  Production ML best practices
 
 ### Confidence Level:
-- ✅ Comfortable with Hugging Face ecosystem
-- ✅ Can debug transformer training issues
-- ✅ Understand trade-offs in model optimization
-- ✅ Ready to build production NLP systems
+-  Comfortable with Hugging Face ecosystem
+-  Can debug transformer training issues
+-  Understand trade-offs in model optimization
+-  Ready to build production NLP systems
 
 ---
 
-## 🚀 After 3 Weeks, We'll Build:
+##  After 3 Weeks, We'll Build:
 
 **Week 4 Onward (Phase 1 Implementation)**:
 
@@ -662,14 +662,14 @@ Create a study log:
 6. **NLP Service API** (`services/nlp_service/`)
 
 You'll be ready because you'll have:
-- ✅ Built similar components during study
-- ✅ Understood the underlying concepts
-- ✅ Practiced the tools and workflows
-- ✅ Created mini-versions of each component
+-  Built similar components during study
+-  Understood the underlying concepts
+-  Practiced the tools and workflows
+-  Created mini-versions of each component
 
 ---
 
-## 📌 Key Resources Summary
+##  Key Resources Summary
 
 ### Primary Learning Platforms:
 1. **Hugging Face**: https://huggingface.co/learn
@@ -685,7 +685,7 @@ You'll be ready because you'll have:
 
 ---
 
-## 🎓 Study Schedule Template
+##  Study Schedule Template
 
 ### Full-Time Study (4-6 hours/day):
 - **Week 1**: Foundations (transformers, PyTorch)
@@ -704,7 +704,7 @@ You'll be ready because you'll have:
 
 ---
 
-## ✅ Ready to Start Building When You Can:
+##  Ready to Start Building When You Can:
 
 ### Demonstrate:
 - [ ] Explain how BERT fine-tuning works
@@ -722,7 +722,7 @@ You'll be ready because you'll have:
 
 ---
 
-## 🚀 First Coding Session (After Study)
+##  First Coding Session (After Study)
 
 When ready, we'll start with:
 
@@ -740,7 +740,7 @@ When ready, we'll start with:
 
 ---
 
-## 📞 Questions During Study?
+##  Questions During Study?
 
 **Save them and we'll address when you start coding**. Or:
 - Check our docs: `docs/` folder
@@ -750,7 +750,7 @@ When ready, we'll start with:
 
 ---
 
-**Start with Week 1, Day 1-2: Review your chapo-bot code! Understanding what you've already built is the fastest path to success.** 🚀
+**Start with Week 1, Day 1-2: Review your chapo-bot code! Understanding what you've already built is the fastest path to success.** 
 
 **Take your time - solid foundations lead to faster development later.**
 

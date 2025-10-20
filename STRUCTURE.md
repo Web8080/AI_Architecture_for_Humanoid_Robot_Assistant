@@ -2,101 +2,101 @@
 
 This document describes the complete directory structure and organization of the Humanoid Robot Assistant AI Brain system.
 
-## 🗂️ Directory Layout
+##  Directory Layout
 
 ```
 humaniod_robot_assitant/
-├── src/                          # Source code
-│   ├── nlp/                      # Natural Language Processing
-│   ├── vision/                   # Computer Vision
-│   ├── multimodal/               # Multimodal Fusion
-│   ├── reasoning/                # Task Planning & Reasoning
-│   ├── perception/               # Sensor Fusion & SLAM
-│   ├── memory/                   # Episodic & Semantic Memory
-│   ├── safety/                   # Safety & Monitoring
-│   ├── api/                      # API Endpoints
-│   └── core/                     # Core utilities
-├── services/                     # Microservices
-│   ├── nlp_service/              # NLP inference service
-│   ├── vision_service/           # Vision inference service
-│   ├── multimodal_service/       # Multimodal service
-│   ├── planning_service/         # Task planning service
-│   ├── memory_service/           # Memory management
-│   └── orchestrator/             # Main orchestrator
-├── models/                       # Model definitions & weights
-│   ├── nlp/                      # NLP model checkpoints
-│   ├── vision/                   # Vision model checkpoints
-│   ├── multimodal/               # Multimodal model checkpoints
-│   └── configs/                  # Model configurations
-├── training/                     # Training pipelines
-│   ├── nlp/                      # NLP training scripts
-│   ├── vision/                   # Vision training scripts
-│   ├── multimodal/               # Multimodal training
-│   ├── reinforcement/            # RL for embodied tasks
-│   └── distributed/              # Distributed training configs
-├── data/                         # Data management
-│   ├── datasets/                 # Dataset definitions
-│   ├── preprocessing/            # Data preprocessing
-│   ├── augmentation/             # Data augmentation
-│   ├── synthetic/                # Synthetic data generation
-│   └── annotation/               # Annotation tools & scripts
-├── mlops/                        # MLOps infrastructure
-│   ├── pipelines/                # Training & deployment pipelines
-│   ├── monitoring/               # Model & system monitoring
-│   ├── registry/                 # Model registry configs
-│   ├── versioning/               # DVC configs
-│   └── experiments/              # Experiment tracking
-├── deployment/                   # Deployment configurations
-│   ├── docker/                   # Dockerfiles
-│   ├── kubernetes/               # K8s manifests
-│   ├── terraform/                # Infrastructure as Code
-│   ├── edge/                     # Edge deployment (Jetson)
-│   ├── cloud/                    # Cloud deployment
-│   └── triton/                   # Triton inference configs
-├── simulation/                   # Simulation environments
-│   ├── isaac_sim/                # NVIDIA Isaac Sim configs
-│   ├── gazebo/                   # Gazebo configs (alternative)
-│   ├── scenarios/                # Test scenarios
-│   └── digital_twin/             # Digital twin assets
-├── tests/                        # Testing
-│   ├── unit/                     # Unit tests
-│   ├── integration/              # Integration tests
-│   ├── e2e/                      # End-to-end tests
-│   ├── performance/              # Performance benchmarks
-│   └── safety/                   # Safety validation tests
-├── docs/                         # Documentation
-│   ├── research_paper/           # Research paper (LaTeX)
-│   ├── architecture/             # Architecture docs
-│   ├── api/                      # API documentation
-│   ├── training/                 # Training guides
-│   ├── deployment/               # Deployment guides
-│   └── governance/               # Ethics, safety, compliance
-├── scripts/                      # Utility scripts
-│   ├── setup/                    # Setup scripts
-│   ├── data/                     # Data processing scripts
-│   ├── training/                 # Training helper scripts
-│   ├── deployment/               # Deployment scripts
-│   └── evaluation/               # Evaluation scripts
-├── configs/                      # Configuration files
-│   ├── base/                     # Base configurations
-│   ├── development/              # Dev environment configs
-│   ├── staging/                  # Staging configs
-│   └── production/               # Production configs
-├── notebooks/                    # Jupyter notebooks
-│   ├── exploratory/              # Data exploration
-│   ├── experiments/              # Model experiments
-│   └── visualization/            # Result visualization
-├── benchmarks/                   # Benchmark suites
-│   ├── perception/               # Perception benchmarks
-│   ├── language/                 # Language benchmarks
-│   └── end_to_end/               # Full system benchmarks
-└── tools/                        # Development tools
-    ├── profiling/                # Performance profiling
-    ├── debugging/                # Debugging utilities
-    └── visualization/            # Visualization tools
+ src/                          # Source code
+    nlp/                      # Natural Language Processing
+    vision/                   # Computer Vision
+    multimodal/               # Multimodal Fusion
+    reasoning/                # Task Planning & Reasoning
+    perception/               # Sensor Fusion & SLAM
+    memory/                   # Episodic & Semantic Memory
+    safety/                   # Safety & Monitoring
+    api/                      # API Endpoints
+    core/                     # Core utilities
+ services/                     # Microservices
+    nlp_service/              # NLP inference service
+    vision_service/           # Vision inference service
+    multimodal_service/       # Multimodal service
+    planning_service/         # Task planning service
+    memory_service/           # Memory management
+    orchestrator/             # Main orchestrator
+ models/                       # Model definitions & weights
+    nlp/                      # NLP model checkpoints
+    vision/                   # Vision model checkpoints
+    multimodal/               # Multimodal model checkpoints
+    configs/                  # Model configurations
+ training/                     # Training pipelines
+    nlp/                      # NLP training scripts
+    vision/                   # Vision training scripts
+    multimodal/               # Multimodal training
+    reinforcement/            # RL for embodied tasks
+    distributed/              # Distributed training configs
+ data/                         # Data management
+    datasets/                 # Dataset definitions
+    preprocessing/            # Data preprocessing
+    augmentation/             # Data augmentation
+    synthetic/                # Synthetic data generation
+    annotation/               # Annotation tools & scripts
+ mlops/                        # MLOps infrastructure
+    pipelines/                # Training & deployment pipelines
+    monitoring/               # Model & system monitoring
+    registry/                 # Model registry configs
+    versioning/               # DVC configs
+    experiments/              # Experiment tracking
+ deployment/                   # Deployment configurations
+    docker/                   # Dockerfiles
+    kubernetes/               # K8s manifests
+    terraform/                # Infrastructure as Code
+    edge/                     # Edge deployment (Jetson)
+    cloud/                    # Cloud deployment
+    triton/                   # Triton inference configs
+ simulation/                   # Simulation environments
+    isaac_sim/                # NVIDIA Isaac Sim configs
+    gazebo/                   # Gazebo configs (alternative)
+    scenarios/                # Test scenarios
+    digital_twin/             # Digital twin assets
+ tests/                        # Testing
+    unit/                     # Unit tests
+    integration/              # Integration tests
+    e2e/                      # End-to-end tests
+    performance/              # Performance benchmarks
+    safety/                   # Safety validation tests
+ docs/                         # Documentation
+    research_paper/           # Research paper (LaTeX)
+    architecture/             # Architecture docs
+    api/                      # API documentation
+    training/                 # Training guides
+    deployment/               # Deployment guides
+    governance/               # Ethics, safety, compliance
+ scripts/                      # Utility scripts
+    setup/                    # Setup scripts
+    data/                     # Data processing scripts
+    training/                 # Training helper scripts
+    deployment/               # Deployment scripts
+    evaluation/               # Evaluation scripts
+ configs/                      # Configuration files
+    base/                     # Base configurations
+    development/              # Dev environment configs
+    staging/                  # Staging configs
+    production/               # Production configs
+ notebooks/                    # Jupyter notebooks
+    exploratory/              # Data exploration
+    experiments/              # Model experiments
+    visualization/            # Result visualization
+ benchmarks/                   # Benchmark suites
+    perception/               # Perception benchmarks
+    language/                 # Language benchmarks
+    end_to_end/               # Full system benchmarks
+ tools/                        # Development tools
+     profiling/                # Performance profiling
+     debugging/                # Debugging utilities
+     visualization/            # Visualization tools
 ```
 
-## 📦 Module Descriptions
+##  Module Descriptions
 
 ### `src/nlp/` - Natural Language Processing
 - **dialogue/**: Multi-turn conversation management
@@ -156,7 +156,7 @@ Each service is independently deployable with its own:
 - Configuration management
 - Scaling policies
 
-## 🔄 Data Flow
+##  Data Flow
 
 ```
 Sensors → Perception Service → Multimodal Fusion → Reasoning → Action Planning
@@ -166,14 +166,14 @@ Sensors → Perception Service → Multimodal Fusion → Reasoning → Action Pl
                               Orchestrator (coordinates all services)
 ```
 
-## 🏭 MLOps Pipeline
+##  MLOps Pipeline
 
 ```
 Data Collection → Annotation → Preprocessing → Training → 
 Evaluation → Optimization → Registry → Deployment → Monitoring → Feedback Loop
 ```
 
-## 🚀 Deployment Patterns
+##  Deployment Patterns
 
 ### Edge Deployment (NVIDIA Jetson)
 - Real-time perception and control
@@ -190,7 +190,7 @@ Evaluation → Optimization → Registry → Deployment → Monitoring → Feedb
 - Non-critical operations offloaded to cloud
 - Graceful degradation when offline
 
-## 📏 Coding Standards
+##  Coding Standards
 
 - **Python**: PEP 8, Black formatter, type hints
 - **C++**: Google C++ Style Guide (for ROS2 nodes)
@@ -198,7 +198,7 @@ Evaluation → Optimization → Registry → Deployment → Monitoring → Feedb
 - **Testing**: pytest, minimum 80% coverage
 - **Git**: Conventional Commits
 
-## 🔐 Security Layers
+##  Security Layers
 
 - API authentication and authorization
 - Data encryption (at rest and in transit)

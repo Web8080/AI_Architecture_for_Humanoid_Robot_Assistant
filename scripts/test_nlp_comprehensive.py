@@ -33,10 +33,10 @@ def test_entity_extractor():
         status = extractor.get_status()
         
         print(f"\nTier Status:")
-        print(f"  Tier 1 (BERT):  {'✓' if status['tier1_bert'] else '✗'}")
-        print(f"  Tier 2 (Custom): {'✓' if status['tier2_custom'] else '✗'}")
-        print(f"  Tier 3 (spaCy):  {'✓' if status['tier3_spacy'] else '✗'}")
-        print(f"  GPU Available:   {'✓' if status['gpu_available'] else '✗'}")
+        print(f"  Tier 1 (BERT):  {'' if status['tier1_bert'] else ''}")
+        print(f"  Tier 2 (Custom): {'' if status['tier2_custom'] else ''}")
+        print(f"  Tier 3 (spaCy):  {'' if status['tier3_spacy'] else ''}")
+        print(f"  GPU Available:   {'' if status['gpu_available'] else ''}")
         
         # Test extraction
         test_text = "Bring me the red cup from the kitchen"
@@ -47,11 +47,11 @@ def test_entity_extractor():
         for entity in entities:
             print(f"  - {entity.type}: '{entity.text}' (confidence: {entity.confidence:.2f}, tier: {entity.tier})")
         
-        print(f"\n{'✓' if entities else '✗'} Entity Extractor: {'PASS' if entities else 'FAIL'}")
+        print(f"\n{'' if entities else ''} Entity Extractor: {'PASS' if entities else 'FAIL'}")
         return True
         
     except Exception as e:
-        print(f"\n✗ Entity Extractor: FAIL - {e}")
+        print(f"\n Entity Extractor: FAIL - {e}")
         return False
 
 
@@ -68,9 +68,9 @@ def test_dialogue_manager():
         status = manager.get_status()
         
         print(f"\nTier Status:")
-        print(f"  Tier 1 (Redis):     {'✓' if status['tier1_redis'] else '✗'}")
-        print(f"  Tier 2 (LangChain): {'✓' if status['tier2_langchain'] else '✗'}")
-        print(f"  Tier 3 (Memory):    ✓ (always available)")
+        print(f"  Tier 1 (Redis):     {'' if status['tier1_redis'] else ''}")
+        print(f"  Tier 2 (LangChain): {'' if status['tier2_langchain'] else ''}")
+        print(f"  Tier 3 (Memory):     (always available)")
         
         # Test session creation
         session = manager.create_session("test_001", "user_123")
@@ -90,11 +90,11 @@ def test_dialogue_manager():
         print(f"Context turns: {context['turn_count']}")
         print(f"Slots: {context['slots']}")
         
-        print(f"\n✓ Dialogue Manager: PASS")
+        print(f"\n Dialogue Manager: PASS")
         return True
         
     except Exception as e:
-        print(f"\n✗ Dialogue Manager: FAIL - {e}")
+        print(f"\n Dialogue Manager: FAIL - {e}")
         return False
 
 
@@ -111,10 +111,10 @@ def test_emotion_detector():
         status = detector.get_status()
         
         print(f"\nTier Status:")
-        print(f"  Tier 1 (Emotion Transformer): {'✓' if status['tier1_transformer'] else '✗'}")
-        print(f"  Tier 2 (Sentiment):           {'✓' if status['tier2_sentiment'] else '✗'}")
-        print(f"  Tier 3 (VADER):               {'✓' if status['tier3_vader'] else '✗'}")
-        print(f"  GPU Available:                {'✓' if status['gpu_available'] else '✗'}")
+        print(f"  Tier 1 (Emotion Transformer): {'' if status['tier1_transformer'] else ''}")
+        print(f"  Tier 2 (Sentiment):           {'' if status['tier2_sentiment'] else ''}")
+        print(f"  Tier 3 (VADER):               {'' if status['tier3_vader'] else ''}")
+        print(f"  GPU Available:                {'' if status['gpu_available'] else ''}")
         
         # Test emotion detection
         test_texts = [
@@ -129,11 +129,11 @@ def test_emotion_detector():
             print(f"  '{text[:40]}'")
             print(f"    → {result.primary_emotion} (confidence: {result.confidence:.2f}, tier: {result.tier})")
         
-        print(f"\n✓ Emotion Detector: PASS")
+        print(f"\n Emotion Detector: PASS")
         return True
         
     except Exception as e:
-        print(f"\n✗ Emotion Detector: FAIL - {e}")
+        print(f"\n Emotion Detector: FAIL - {e}")
         return False
 
 
@@ -151,11 +151,11 @@ def test_rag_system():
         
         print(f"\nRAG Status:")
         print(f"  Framework: {status['framework']}")
-        print(f"  LangChain:  {'✓' if status['langchain_available'] else '✗'}")
-        print(f"  LlamaIndex: {'✓' if status['llamaindex_available'] else '✗'}")
-        print(f"  FAISS:      {'✓' if status['faiss_available'] else '✗'}")
-        print(f"  Vector Store Ready: {'✓' if status['vector_store_ready'] else '✗'}")
-        print(f"  GPU Enabled: {'✓' if status['gpu_enabled'] else '✗'}")
+        print(f"  LangChain:  {'' if status['langchain_available'] else ''}")
+        print(f"  LlamaIndex: {'' if status['llamaindex_available'] else ''}")
+        print(f"  FAISS:      {'' if status['faiss_available'] else ''}")
+        print(f"  Vector Store Ready: {'' if status['vector_store_ready'] else ''}")
+        print(f"  GPU Enabled: {'' if status['gpu_enabled'] else ''}")
         
         # Add test documents
         docs = [
@@ -174,11 +174,11 @@ def test_rag_system():
         for r in results:
             print(f"  - {r.text} (score: {r.score:.3f})")
         
-        print(f"\n✓ RAG System: PASS")
+        print(f"\n RAG System: PASS")
         return True
         
     except Exception as e:
-        print(f"\n✗ RAG System: FAIL - {e}")
+        print(f"\n RAG System: FAIL - {e}")
         return False
 
 
@@ -195,13 +195,13 @@ def test_llm_integration():
         status = integrator.get_status()
         
         print(f"\nTier Status:")
-        print(f"  Tier 1 (OpenAI): {'✓' if status['tier1_openai'] else '✗'}")
+        print(f"  Tier 1 (OpenAI): {'' if status['tier1_openai'] else ''}")
         if status['tier1_openai']:
             print(f"    Model: {status['openai_model']}")
-        print(f"  Tier 2 (Ollama): {'✓' if status['tier2_ollama'] else '✗'}")
+        print(f"  Tier 2 (Ollama): {'' if status['tier2_ollama'] else ''}")
         if status['tier2_ollama']:
             print(f"    Model: {status['ollama_model']}")
-        print(f"  Tier 3 (Template): ✓ (always available)")
+        print(f"  Tier 3 (Template):  (always available)")
         
         # Test generation
         prompt = "What is 2+2?"
@@ -211,11 +211,11 @@ def test_llm_integration():
         print(f"  Tier: {response.tier}")
         print(f"  Latency: {response.latency_ms:.1f}ms")
         
-        print(f"\n✓ LLM Integration: PASS")
+        print(f"\n LLM Integration: PASS")
         return True
         
     except Exception as e:
-        print(f"\n✗ LLM Integration: FAIL - {e}")
+        print(f"\n LLM Integration: FAIL - {e}")
         return False
 
 
@@ -232,21 +232,21 @@ def test_asr():
         status = recognizer.get_status()
         
         print(f"\nTier Status:")
-        print(f"  Tier 1 (Whisper): {'✓' if status['tier1_whisper'] else '✗'}")
+        print(f"  Tier 1 (Whisper): {'' if status['tier1_whisper'] else ''}")
         if status['tier1_whisper']:
             print(f"    Type: {status['tier1_type']}")
             print(f"    Model: {status['whisper_model_size']}")
-        print(f"  Tier 2 (Vosk):    {'✓' if status['tier2_vosk'] else '✗'}")
+        print(f"  Tier 2 (Vosk):    {'' if status['tier2_vosk'] else ''}")
         print(f"  Device: {status['device']}")
         
         print(f"\nNote: ASR requires audio file to test properly")
         print(f"  To test: recognizer.transcribe('audio.wav')")
         
-        print(f"\n✓ ASR: INITIALIZED")
+        print(f"\n ASR: INITIALIZED")
         return True
         
     except Exception as e:
-        print(f"\n✗ ASR: FAIL - {e}")
+        print(f"\n ASR: FAIL - {e}")
         return False
 
 
@@ -263,10 +263,10 @@ def test_tts():
         status = synthesizer.get_status()
         
         print(f"\nTier Status:")
-        print(f"  Tier 1 (ElevenLabs): {'✓' if status['tier1_elevenlabs'] else '✗'}")
-        print(f"  Tier 2 (Coqui TTS):  {'✓' if status['tier2_coqui'] else '✗'}")
-        print(f"  Tier 3 (pyttsx3):    {'✓' if status['tier3_pyttsx3'] else '✗'}")
-        print(f"  GPU Available:       {'✓' if status['gpu_available'] else '✗'}")
+        print(f"  Tier 1 (ElevenLabs): {'' if status['tier1_elevenlabs'] else ''}")
+        print(f"  Tier 2 (Coqui TTS):  {'' if status['tier2_coqui'] else ''}")
+        print(f"  Tier 3 (pyttsx3):    {'' if status['tier3_pyttsx3'] else ''}")
+        print(f"  GPU Available:       {'' if status['gpu_available'] else ''}")
         
         # Test synthesis
         test_text = "Hello, I am your robot assistant."
@@ -274,18 +274,18 @@ def test_tts():
         result = synthesizer.synthesize(test_text)
         
         if result.success:
-            print(f"  ✓ Synthesized successfully")
+            print(f"   Synthesized successfully")
             print(f"  Output: {result.audio_path}")
             print(f"  Tier: {result.tier}")
             print(f"  Latency: {result.latency_ms:.1f}ms")
         else:
-            print(f"  ✗ Synthesis failed")
+            print(f"   Synthesis failed")
         
-        print(f"\n{'✓' if result.success else '✗'} TTS: {'PASS' if result.success else 'FAIL'}")
+        print(f"\n{'' if result.success else ''} TTS: {'PASS' if result.success else 'FAIL'}")
         return result.success
         
     except Exception as e:
-        print(f"\n✗ TTS: FAIL - {e}")
+        print(f"\n TTS: FAIL - {e}")
         return False
 
 
@@ -304,7 +304,7 @@ def test_full_nlp_service():
         status = service.get_detailed_status()
         print(f"\nComponents Ready:")
         for component, ready in status['components'].items():
-            print(f"  {'✓' if ready else '✗'} {component}")
+            print(f"  {'' if ready else ''} {component}")
         
         # Test end-to-end
         async def run_e2e_test():
@@ -336,11 +336,11 @@ def test_full_nlp_service():
         
         asyncio.run(run_e2e_test())
         
-        print(f"\n✓ Full NLP Service: PASS")
+        print(f"\n Full NLP Service: PASS")
         return True
         
     except Exception as e:
-        print(f"\n✗ Full NLP Service: FAIL - {e}")
+        print(f"\n Full NLP Service: FAIL - {e}")
         import traceback
         traceback.print_exc()
         return False
@@ -373,15 +373,15 @@ def main():
     total = len(results)
     
     for component, result in results.items():
-        status_icon = "✓" if result else "✗"
+        status_icon = "" if result else ""
         print(f"  {status_icon} {component}: {'PASS' if result else 'FAIL'}")
     
     print(f"\n{passed}/{total} tests passed ({passed/total*100:.0f}%)")
     
     if passed == total:
-        print("\n🎉 All tests passed! NLP module is ready.")
+        print("\n All tests passed! NLP module is ready.")
     else:
-        print(f"\n⚠ {total - passed} test(s) failed. Check logs above.")
+        print(f"\n {total - passed} test(s) failed. Check logs above.")
     
     print("\n" + "="*80)
     return passed == total

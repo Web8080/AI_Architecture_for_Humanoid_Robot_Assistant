@@ -119,7 +119,7 @@ class EmotionDetector:
                 device=self.device,
                 top_k=None  # Return all emotions with scores
             )
-            logger.info("✓ Tier 1 (Emotion Transformer) initialized successfully")
+            logger.info(" Tier 1 (Emotion Transformer) initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize Tier 1: {e}")
             self.tier1_detector = None
@@ -139,7 +139,7 @@ class EmotionDetector:
                 device=self.device,
                 top_k=None
             )
-            logger.info("✓ Tier 2 (Sentiment) initialized successfully")
+            logger.info(" Tier 2 (Sentiment) initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize Tier 2: {e}")
             self.tier2_detector = None
@@ -152,7 +152,7 @@ class EmotionDetector:
         
         try:
             self.tier3_detector = SentimentIntensityAnalyzer()
-            logger.info("✓ Tier 3 (VADER) initialized successfully")
+            logger.info(" Tier 3 (VADER) initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize Tier 3: {e}")
             self.tier3_detector = None

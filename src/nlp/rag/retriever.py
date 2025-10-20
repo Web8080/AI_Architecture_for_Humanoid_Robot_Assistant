@@ -148,7 +148,7 @@ class RAGRetriever:
                     model_kwargs={'device': self.device},
                     encode_kwargs={'device': self.device, 'batch_size': 32}
                 )
-                logger.info("✓ Embeddings initialized with LangChain")
+                logger.info(" Embeddings initialized with LangChain")
                 return
             except Exception as e:
                 logger.warning(f"LangChain embeddings failed: {e}")
@@ -158,7 +158,7 @@ class RAGRetriever:
             try:
                 logger.info(f"Loading embeddings with sentence-transformers: {self.embedding_model_name}")
                 self.embeddings = SentenceTransformer(self.embedding_model_name, device=self.device)
-                logger.info("✓ Embeddings initialized with sentence-transformers")
+                logger.info(" Embeddings initialized with sentence-transformers")
                 return
             except Exception as e:
                 logger.error(f"Sentence-transformers failed: {e}")
@@ -192,7 +192,7 @@ class RAGRetriever:
                     allow_dangerous_deserialization=True
                 )
                 self.framework = "langchain"
-                logger.info("✓ FAISS index loaded successfully")
+                logger.info(" FAISS index loaded successfully")
                 return
             except Exception as e:
                 logger.warning(f"Failed to load existing index: {e}")
@@ -206,7 +206,7 @@ class RAGRetriever:
                 self.embeddings
             )
             self.framework = "langchain"
-            logger.info("✓ New FAISS index created")
+            logger.info(" New FAISS index created")
         else:
             logger.error("Cannot create FAISS index without LangChain")
     
@@ -220,7 +220,7 @@ class RAGRetriever:
         try:
             # Use in-memory Qdrant for development
             self.qdrant_client = QdrantClient(":memory:")
-            logger.info("✓ Qdrant initialized (in-memory)")
+            logger.info(" Qdrant initialized (in-memory)")
             self.framework = "qdrant"
         except Exception as e:
             logger.error(f"Qdrant initialization failed: {e}. Falling back to FAISS")
@@ -370,7 +370,7 @@ if __name__ == "__main__":
     
     print("Adding sample documents to vector store...")
     retriever.add_documents(sample_documents)
-    print(f"✓ Added {len(sample_documents)} documents\n")
+    print(f" Added {len(sample_documents)} documents\n")
     
     # Test retrieval
     test_queries = [

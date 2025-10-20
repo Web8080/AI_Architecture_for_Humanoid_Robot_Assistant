@@ -498,3 +498,68 @@ development:
 # - WEATHER_API_KEY, NEWS_API_KEY
 # ==============================================================================
 
+
+# ==============================================================================
+# COMPUTER VISION MODULE - Multi-Tier Fallback Configuration
+# ==============================================================================
+
+vision:
+  # Object Detection
+  object_detector:
+    tier1_enabled: false  # YOLOv8-x (GPU, heavy)
+    tier1_model: "yolov8x.pt"
+    tier2_enabled: true   # YOLOv8-nano (CPU, fast)
+    tier2_model: "yolov8n.pt"
+    tier3_enabled: true   # Haar Cascades (always works)
+    use_gpu: null  # null = auto-detect, true = force GPU, false = force CPU
+    confidence_threshold: 0.25
+    max_detections: 100
+  
+  # Segmentation
+  segmenter:
+    tier1_enabled: false  # SAM (heavy, best quality)
+    tier1_model_type: "vit_h"
+    tier1_checkpoint: "sam_vit_h.pth"
+    tier2_enabled: true   # YOLOv8-seg (fast)
+    tier2_model: "yolov8n-seg.pt"
+    tier3_enabled: true   # GrabCut/Watershed
+    use_gpu: null
+    confidence_threshold: 0.25
+  
+  # Depth Estimation
+  depth_estimator:
+    tier1_enabled: false  # MiDaS DPT-Large (GPU, best)
+    tier1_model: "DPT_Large"
+    tier2_enabled: true   # MiDaS Small (CPU, fast)
+    tier2_model: "MiDaS_small"
+    tier3_enabled: true   # Classical CV heuristics
+    use_gpu: null
+    normalize_depth: true
+  
+  # Pose Estimation
+  pose_estimator:
+    tier1_enabled: true   # MediaPipe (fast & accurate)
+    tier2_enabled: false  # OpenPose (not implemented)
+    tier3_enabled: true   # Classical keypoint detection
+    min_detection_confidence: 0.5
+    min_tracking_confidence: 0.5
+  
+  # Face Recognition
+  face_recognizer:
+    tier1_enabled: false  # InsightFace (heavy)
+    tier2_enabled: false  # DeepFace (not implemented)
+    tier3_enabled: true   # Haar + face_recognition
+    min_face_size: 30
+    scale_factor: 1.1
+    min_neighbors: 5
+  
+  # Scene Understanding
+  scene_analyzer:
+    tier1_enabled: false  # CLIP ViT-L (GPU, best)
+    tier1_model: "ViT-L/14"
+    tier2_enabled: false  # CLIP ViT-B (CPU, fast)
+    tier2_model: "ViT-B/32"
+    tier3_enabled: true   # Classical CV (color histograms)
+    use_gpu: null
+    top_k_labels: 5
+

@@ -115,7 +115,7 @@ class LLMIntegrator:
         try:
             self.openai_client = OpenAI(api_key=self.openai_api_key, timeout=self.timeout)
             # Test connection with a minimal request
-            logger.info("✓ Tier 1 (OpenAI) initialized successfully")
+            logger.info(" Tier 1 (OpenAI) initialized successfully")
         except Exception as e:
             logger.warning(f"OpenAI initialization failed: {e}")
             self.openai_client = None
@@ -129,7 +129,7 @@ class LLMIntegrator:
         try:
             # Check if Ollama server is running
             models = ollama.list()
-            logger.info(f"✓ Tier 2 (Ollama) initialized successfully")
+            logger.info(f" Tier 2 (Ollama) initialized successfully")
             logger.info(f"  Available models: {[m['name'] for m in models.get('models', [])]}")
             self.ollama_client = True  # Use module directly
         except Exception as e:
@@ -150,7 +150,7 @@ class LLMIntegrator:
             "navigate_to": "I'll navigate to {location}.",
             "default": "I understand. Let me process that."
         }
-        logger.info("✓ Tier 3 (Templates) initialized successfully")
+        logger.info(" Tier 3 (Templates) initialized successfully")
     
     async def generate(
         self,

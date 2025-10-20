@@ -1,6 +1,6 @@
 # Getting Started - Humanoid Robot Assistant
 
-## 🚀 Quick Start (5 Minutes)
+##  Quick Start (5 Minutes)
 
 This guide will help you set up the development environment and run your first test.
 
@@ -164,7 +164,7 @@ python scripts/interactive_cli.py
 
 ---
 
-## 📚 Next Steps
+##  Next Steps
 
 ### 1. Explore the Architecture
 
@@ -210,7 +210,7 @@ See [`docs/deployment/EDGE_DEPLOYMENT.md`](deployment/EDGE_DEPLOYMENT.md) for de
 
 ---
 
-## 🧪 Running Tests
+##  Running Tests
 
 ### Unit Tests
 ```bash
@@ -245,7 +245,7 @@ python benchmarks/end_to_end_benchmark.py
 
 ---
 
-## 🔧 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -323,38 +323,38 @@ sudo kill -9 <PID>
 
 ---
 
-## 📖 Documentation Structure
+##  Documentation Structure
 
 ```
 docs/
-├── architecture/          # System architecture
-│   ├── SYSTEM_ARCHITECTURE.md
-│   ├── NLP_ARCHITECTURE.md
-│   └── VISION_ARCHITECTURE.md
-├── api/                   # API documentation
-│   ├── NLP_API.md
-│   ├── VISION_API.md
-│   └── ORCHESTRATOR_API.md
-├── training/              # Training guides
-│   ├── NLP_TRAINING.md
-│   ├── VISION_TRAINING.md
-│   └── MULTIMODAL_TRAINING.md
-├── deployment/            # Deployment guides
-│   ├── EDGE_DEPLOYMENT.md
-│   ├── CLOUD_DEPLOYMENT.md
-│   └── KUBERNETES.md
-├── research_paper/        # Academic paper
-│   ├── 00_PAPER_OUTLINE.md
-│   └── BIBLIOGRAPHY.md
-└── governance/            # Ethics & safety
-    ├── ETHICS.md
-    ├── SAFETY.md
-    └── PRIVACY.md
+ architecture/          # System architecture
+    SYSTEM_ARCHITECTURE.md
+    NLP_ARCHITECTURE.md
+    VISION_ARCHITECTURE.md
+ api/                   # API documentation
+    NLP_API.md
+    VISION_API.md
+    ORCHESTRATOR_API.md
+ training/              # Training guides
+    NLP_TRAINING.md
+    VISION_TRAINING.md
+    MULTIMODAL_TRAINING.md
+ deployment/            # Deployment guides
+    EDGE_DEPLOYMENT.md
+    CLOUD_DEPLOYMENT.md
+    KUBERNETES.md
+ research_paper/        # Academic paper
+    00_PAPER_OUTLINE.md
+    BIBLIOGRAPHY.md
+ governance/            # Ethics & safety
+     ETHICS.md
+     SAFETY.md
+     PRIVACY.md
 ```
 
 ---
 
-## 🤝 Development Workflow
+##  Development Workflow
 
 ### 1. Create a Feature Branch
 
@@ -397,7 +397,7 @@ Open PR on GitHub/GitLab and request review.
 
 ---
 
-## 🆘 Getting Help
+##  Getting Help
 
 - **Documentation**: [`docs/`](../docs/)
 - **Issues**: GitHub Issues
@@ -407,7 +407,7 @@ Open PR on GitHub/GitLab and request review.
 
 ---
 
-## 🎯 Learning Path
+##  Learning Path
 
 **Week 1-2: Foundations**
 - [ ] Set up development environment
@@ -433,19 +433,19 @@ Open PR on GitHub/GitLab and request review.
 
 ---
 
-## 🌟 Success Criteria
+##  Success Criteria
 
 You're ready to move forward when you can:
-- ✅ Run all services locally
-- ✅ Send API requests to all services
-- ✅ Train a simple model
-- ✅ Run end-to-end tests
-- ✅ Deploy to Docker containers
-- ✅ Understand the architecture
+-  Run all services locally
+-  Send API requests to all services
+-  Train a simple model
+-  Run end-to-end tests
+-  Deploy to Docker containers
+-  Understand the architecture
 
 ---
 
-**Happy Building! 🤖🚀**
+**Happy Building! **
 
 For detailed architecture and research background, see the [Research Paper Outline](research_paper/00_PAPER_OUTLINE.md).
 

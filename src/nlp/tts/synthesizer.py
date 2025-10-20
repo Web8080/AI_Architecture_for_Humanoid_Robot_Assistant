@@ -127,7 +127,7 @@ class TTSSynthesizer:
             set_api_key(self.elevenlabs_api_key)
             # Test by listing voices
             available_voices = voices()
-            logger.info("✓ Tier 1 (ElevenLabs) initialized successfully")
+            logger.info(" Tier 1 (ElevenLabs) initialized successfully")
             logger.info(f"  Available voices: {len(available_voices) if hasattr(available_voices, '__len__') else 'unknown'}")
             self.tier1_ready = True
         except Exception as e:
@@ -146,7 +146,7 @@ class TTSSynthesizer:
                 model_name=self.coqui_model,
                 gpu=self.use_gpu
             )
-            logger.info("✓ Tier 2 (Coqui TTS) initialized successfully")
+            logger.info(" Tier 2 (Coqui TTS) initialized successfully")
         except Exception as e:
             logger.warning(f"Coqui TTS initialization failed: {e}")
             self.tier2_model = None
@@ -164,7 +164,7 @@ class TTSSynthesizer:
             if self.pyttsx3_voice:
                 self.tier3_engine.setProperty('voice', self.pyttsx3_voice)
             
-            logger.info("✓ Tier 3 (pyttsx3) initialized successfully")
+            logger.info(" Tier 3 (pyttsx3) initialized successfully")
         except Exception as e:
             logger.error(f"pyttsx3 initialization failed: {e}")
             self.tier3_engine = None

@@ -311,13 +311,13 @@ python src/nlp/nlp_service.py
 ```
 
 **This will work with:**
-- ✓ Entity extraction (spaCy fallback)
-- ✓ Dialogue management (in-memory fallback)
-- ✓ Emotion detection (VADER fallback)
-- ✓ TTS (pyttsx3 fallback)
-- ✗ RAG (requires sentence-transformers)
-- ✗ LLM (template-based only)
-- ✗ ASR (needs whisper or vosk)
+-  Entity extraction (spaCy fallback)
+-  Dialogue management (in-memory fallback)
+-  Emotion detection (VADER fallback)
+-  TTS (pyttsx3 fallback)
+-  RAG (requires sentence-transformers)
+-  LLM (template-based only)
+-  ASR (needs whisper or vosk)
 
 ---
 

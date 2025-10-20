@@ -124,7 +124,7 @@ class ASRRecognizer:
                     device=self.device,
                     compute_type=self.compute_type
                 )
-                logger.info("✓ Tier 1 (Faster-Whisper) initialized successfully")
+                logger.info(" Tier 1 (Faster-Whisper) initialized successfully")
                 self.tier1_type = "faster-whisper"
                 return
             except Exception as e:
@@ -135,7 +135,7 @@ class ASRRecognizer:
             try:
                 logger.info(f"Loading Tier 1 (OpenAI Whisper): {self.whisper_model_size}")
                 self.tier1_model = whisper.load_model(self.whisper_model_size, device=self.device)
-                logger.info("✓ Tier 1 (OpenAI Whisper) initialized successfully")
+                logger.info(" Tier 1 (OpenAI Whisper) initialized successfully")
                 self.tier1_type = "openai-whisper"
                 return
             except Exception as e:
@@ -158,7 +158,7 @@ class ASRRecognizer:
         try:
             logger.info(f"Loading Tier 2 (Vosk) from: {self.vosk_model_path}")
             self.tier2_model = VoskModel(self.vosk_model_path)
-            logger.info("✓ Tier 2 (Vosk) initialized successfully")
+            logger.info(" Tier 2 (Vosk) initialized successfully")
         except Exception as e:
             logger.error(f"Vosk initialization failed: {e}")
             self.tier2_model = None

@@ -136,7 +136,7 @@ class EntityExtractor:
                 aggregation_strategy="simple",
                 device=self.device
             )
-            logger.info("✓ Tier 1 (BERT-NER) initialized successfully")
+            logger.info(" Tier 1 (BERT-NER) initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize Tier 1: {e}")
             self.tier1_ner = None
@@ -160,7 +160,7 @@ class EntityExtractor:
                 aggregation_strategy="simple",
                 device=self.device
             )
-            logger.info("✓ Tier 2 (Custom) initialized successfully")
+            logger.info(" Tier 2 (Custom) initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize Tier 2: {e}")
             self.tier2_ner = None
@@ -182,13 +182,13 @@ class EntityExtractor:
                 # Try with smaller model as fallback
                 try:
                     self.tier3_ner = spacy.load("en_core_web_sm")
-                    logger.info("✓ Tier 3 (spaCy) initialized with en_core_web_sm")
+                    logger.info(" Tier 3 (spaCy) initialized with en_core_web_sm")
                 except OSError:
                     logger.error("No spaCy models available. Install with: python -m spacy download en_core_web_sm")
                     self.tier3_ner = None
                     return
             
-            logger.info("✓ Tier 3 (spaCy) initialized successfully")
+            logger.info(" Tier 3 (spaCy) initialized successfully")
         except Exception as e:
             logger.error(f"Failed to initialize Tier 3: {e}")
             self.tier3_ner = None

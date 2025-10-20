@@ -20,11 +20,11 @@ The Humanoid Robot Assistant Brain is a distributed, cloud-edge hybrid AI system
 - **Continuous Learning**: MLOps pipeline for model improvement
 
 ### Design Goals
-- ✅ **Low Latency**: <100ms perception-to-action for safety-critical operations
-- ✅ **High Reliability**: 99.9% uptime with graceful degradation
-- ✅ **Scalability**: From single robot to fleet management
-- ✅ **Safety-First**: Multiple redundant safety layers
-- ✅ **Explainability**: Every decision can be traced and explained
+-  **Low Latency**: <100ms perception-to-action for safety-critical operations
+-  **High Reliability**: 99.9% uptime with graceful degradation
+-  **Scalability**: From single robot to fleet management
+-  **Safety-First**: Multiple redundant safety layers
+-  **Explainability**: Every decision can be traced and explained
 
 ---
 
@@ -39,29 +39,29 @@ Each major AI component runs as an independent service:
 
 ### 2. Cloud-Edge Hybrid
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                         CLOUD                               │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │  • Heavy model training (A100/H100)                 │   │
-│  │  • Large LLM inference (GPT-4, Llama-70B)          │   │
-│  │  • Data aggregation & analytics                     │   │
-│  │  • Model registry & serving                         │   │
-│  │  • Fleet management & monitoring                    │   │
-│  └─────────────────────────────────────────────────────┘   │
-│                          ↕                                   │
-│                 Secure WebSocket/gRPC                        │
-│                          ↕                                   │
-│  ┌─────────────────────────────────────────────────────┐   │
-│  │                    EDGE (Robot)                      │   │
-│  │  ┌──────────────────────────────────────────────┐   │   │
-│  │  │  • Real-time perception (YOLOv8, SAM)       │   │   │
-│  │  │  • Small LLM (Llama-7B quantized)           │   │   │
-│  │  │  • Low-level control & safety                │   │   │
-│  │  │  • SLAM & localization                       │   │   │
-│  │  │  • Offline capability (fallback policies)   │   │   │
-│  │  └──────────────────────────────────────────────┘   │   │
-│  └─────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────┘
+
+                         CLOUD                               
+     
+    • Heavy model training (A100/H100)                    
+    • Large LLM inference (GPT-4, Llama-70B)             
+    • Data aggregation & analytics                        
+    • Model registry & serving                            
+    • Fleet management & monitoring                       
+     
+                          ↕                                   
+                 Secure WebSocket/gRPC                        
+                          ↕                                   
+     
+                      EDGE (Robot)                         
+          
+      • Real-time perception (YOLOv8, SAM)             
+      • Small LLM (Llama-7B quantized)                 
+      • Low-level control & safety                      
+      • SLAM & localization                             
+      • Offline capability (fallback policies)         
+          
+     
+
 ```
 
 **Edge runs:**
@@ -98,31 +98,31 @@ Layer 0: Hardware Safety (mechanical stops, compliant actuators)
 ### Component Diagram
 
 ```
-┌───────────────────────────────────────────────────────────────────┐
-│                        ORCHESTRATOR SERVICE                        │
-│              (Coordinates all services, manages state)             │
-└────────────┬───────────────┬──────────────┬─────────────┬─────────┘
-             │               │              │             │
-    ┌────────▼─────┐  ┌──────▼──────┐  ┌───▼─────┐  ┌───▼──────┐
-    │  NLP Service │  │Vision Service│  │Multimodal│ │Planning  │
-    │              │  │              │  │ Service  │  │ Service  │
-    │ • Dialogue   │  │ • Detection  │  │          │  │          │
-    │ • Intent     │  │ • Segment    │  │ • VLM    │  │ • Task   │
-    │ • Emotion    │  │ • Pose       │  │ • Fusion │  │   Plan   │
-    │ • RAG        │  │ • Depth      │  │ • Ground │  │ • Motion │
-    │ • ASR/TTS    │  │ • Track      │  │ • VQA    │  │   Plan   │
-    └──────┬───────┘  └──────┬───────┘  └────┬─────┘  └────┬─────┘
-           │                 │               │             │
-           └─────────────────┴───────────────┴─────────────┘
-                             │
-                   ┌─────────▼──────────┐
-                   │   Memory Service   │
-                   │                    │
-                   │ • Episodic Memory  │
-                   │ • Semantic Memory  │
-                   │ • Working Memory   │
-                   │ • Vector Store     │
-                   └────────────────────┘
+
+                        ORCHESTRATOR SERVICE                        
+              (Coordinates all services, manages state)             
+
+                                                       
+          
+      NLP Service   Vision Service  Multimodal Planning  
+                                     Service     Service  
+     • Dialogue      • Detection                          
+     • Intent        • Segment       • VLM       • Task   
+     • Emotion       • Pose          • Fusion      Plan   
+     • RAG           • Depth         • Ground    • Motion 
+     • ASR/TTS       • Track         • VQA         Plan   
+          
+                                                        
+           
+                             
+                   
+                      Memory Service   
+                                       
+                    • Episodic Memory  
+                    • Semantic Memory  
+                    • Working Memory   
+                    • Vector Store     
+                   
 ```
 
 ### 1. NLP Service
@@ -401,7 +401,7 @@ Response:
 ```
 IDLE → LISTENING → UNDERSTANDING → PLANNING → EXECUTING → IDLE
                       ↓                             ↓
-                   ERROR ←──────────────────────── ERROR
+                   ERROR ← ERROR
                       ↓
                   RECOVERY → IDLE
 ```
@@ -511,45 +511,45 @@ IDLE → LISTENING → UNDERSTANDING → PLANNING → EXECUTING → IDLE
 ### Development Environment
 ```
 laptop/workstation
-├── Code (VSCode/PyCharm)
-├── Local Docker containers (services)
-├── Simulation (Isaac Sim / Gazebo)
-└── Remote training (cloud GPU)
+ Code (VSCode/PyCharm)
+ Local Docker containers (services)
+ Simulation (Isaac Sim / Gazebo)
+ Remote training (cloud GPU)
 ```
 
 ### Edge Deployment (Robot)
 ```
 NVIDIA Jetson Orin AGX (32GB)
-├── Docker containers
-│   ├── vision_service (TensorRT models)
-│   ├── nlp_service (quantized LLM)
-│   ├── perception_service (SLAM)
-│   ├── orchestrator
-│   └── safety_service
-├── ROS2 nodes (native)
-│   ├── Camera drivers
-│   ├── Motor controllers
-│   └── Sensor interfaces
-└── Monitoring agent
+ Docker containers
+    vision_service (TensorRT models)
+    nlp_service (quantized LLM)
+    perception_service (SLAM)
+    orchestrator
+    safety_service
+ ROS2 nodes (native)
+    Camera drivers
+    Motor controllers
+    Sensor interfaces
+ Monitoring agent
 ```
 
 ### Cloud Deployment
 ```
 Kubernetes Cluster (AWS/GCP/Azure)
-├── Training namespace
-│   ├── PyTorch DDP jobs (A100 pods)
-│   ├── Data preprocessing
-│   └── Hyperparameter tuning
-├── Inference namespace
-│   ├── Triton Inference Server
-│   ├── Large LLM service
-│   └── Model registry
-├── MLOps namespace
-│   ├── MLflow server
-│   ├── DVC remote storage
-│   └── Monitoring dashboards
-└── API Gateway
-    └── Robot fleet management
+ Training namespace
+    PyTorch DDP jobs (A100 pods)
+    Data preprocessing
+    Hyperparameter tuning
+ Inference namespace
+    Triton Inference Server
+    Large LLM service
+    Model registry
+ MLOps namespace
+    MLflow server
+    DVC remote storage
+    Monitoring dashboards
+ API Gateway
+     Robot fleet management
 ```
 
 ### Network Architecture

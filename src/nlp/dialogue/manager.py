@@ -138,7 +138,7 @@ class DialogueManager:
             )
             # Test connection
             self.redis_client.ping()
-            logger.info("✓ Tier 1 (Redis) initialized successfully")
+            logger.info(" Tier 1 (Redis) initialized successfully")
         except (redis.ConnectionError, redis.TimeoutError) as e:
             logger.warning(f"Redis connection failed: {e}. Using fallback storage.")
             self.redis_client = None
@@ -152,7 +152,7 @@ class DialogueManager:
             logger.warning("Tier 2 (LangChain) unavailable: langchain not installed")
             return
         
-        logger.info("✓ Tier 2 (LangChain) initialized successfully")
+        logger.info(" Tier 2 (LangChain) initialized successfully")
     
     def create_session(
         self,

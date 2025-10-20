@@ -1,26 +1,26 @@
-# 🚀 START HERE - Your Learning Path
+#  START HERE - Your Learning Path
 
-**Current Status**: Phase 0 Complete ✅  
+**Current Status**: Phase 0 Complete   
 **Next Phase**: Phase 1 - Core NLP Module  
 **Your Action**: Study for 2-3 weeks, then we code
 
 ---
 
-## 📋 Quick Summary: What to Study
+##  Quick Summary: What to Study
 
 ### **Week 1: Foundations** (16 hours)
 **Focus**: Transformers, BERT, PyTorch basics
 
 **Most Important**:
-1. ⭐ **Review your chapo-bot code** (4 hours)
+1.  **Review your chapo-bot code** (4 hours)
    - `/Users/user/chapo-bot-backend/backend/`
    - Understand intent routing, session management, emotion detection
    
-2. ⭐ **Illustrated Transformer** (30 min)
+2.  **Illustrated Transformer** (30 min)
    - http://jalammar.github.io/illustrated-transformer/
    - Understand attention mechanism
    
-3. ⭐ **Hugging Face Course Chapters 1-3** (3 hours)
+3.  **Hugging Face Course Chapters 1-3** (3 hours)
    - https://huggingface.co/learn/nlp-course/chapter1/1
    - Hands-on with transformers library
 
@@ -33,11 +33,11 @@
 **Focus**: Fine-tuning, RAG systems
 
 **Most Important**:
-1. ⭐ **Fine-tune BERT tutorial** (3 hours)
+1.  **Fine-tune BERT tutorial** (3 hours)
    - https://huggingface.co/docs/transformers/training
    - Build actual intent classifier
    
-2. ⭐ **LangChain RAG Tutorial** (3 hours)
+2.  **LangChain RAG Tutorial** (3 hours)
    - https://python.langchain.com/docs/tutorials/rag/
    - Build retrieval system
 
@@ -51,11 +51,11 @@
 **Focus**: APIs, Docker, Deployment
 
 **Most Important**:
-1. ⭐ **FastAPI Tutorial** (4 hours)
+1.  **FastAPI Tutorial** (4 hours)
    - https://fastapi.tiangolo.com/tutorial/
    - Build ML API endpoint
    
-2. ⭐ **Docker Basics** (3 hours)
+2.  **Docker Basics** (3 hours)
    - https://docker-curriculum.com/
    - Containerize your API
 
@@ -65,36 +65,36 @@
 
 ---
 
-## 🎯 Top 5 Things to Master (Priority Order)
+##  Top 5 Things to Master (Priority Order)
 
-### 1. **Your Chapo-Bot Architecture** ⭐⭐⭐
+### 1. **Your Chapo-Bot Architecture** 
 **Why**: We're evolving it, not starting from scratch  
 **Time**: 4 hours  
 **Action**: Read and diagram the code flow
 
-### 2. **BERT Fine-Tuning** ⭐⭐⭐
+### 2. **BERT Fine-Tuning** 
 **Why**: Core of our intent classifier  
 **Time**: 6 hours (tutorial + practice)  
 **Action**: Fine-tune BERT on simple dataset
 
-### 3. **RAG with FAISS** ⭐⭐⭐
+### 3. **RAG with FAISS** 
 **Why**: Essential for grounded responses  
 **Time**: 5 hours (tutorial + build)  
 **Action**: Build simple knowledge retrieval system
 
-### 4. **FastAPI for ML** ⭐⭐
+### 4. **FastAPI for ML** 
 **Why**: All our services use FastAPI  
 **Time**: 4 hours  
 **Action**: Create ML prediction endpoint
 
-### 5. **ONNX Conversion** ⭐⭐
+### 5. **ONNX Conversion** 
 **Why**: Edge deployment requires optimization  
 **Time**: 3 hours  
 **Action**: Convert PyTorch model to ONNX
 
 ---
 
-## 🛠️ Your First Practical Exercise (Do This Weekend)
+##  Your First Practical Exercise (Do This Weekend)
 
 ### **Build a Mini Intent Classifier** (4-6 hours)
 
@@ -151,7 +151,7 @@ print(f"Intent: {prediction.item()}")
 
 ---
 
-## 📚 Essential Reading (Must Do)
+##  Essential Reading (Must Do)
 
 **Before you code anything, read these 3**:
 
@@ -170,7 +170,7 @@ print(f"Intent: {prediction.item()}")
 
 ---
 
-## 🎓 Learning Resources (Bookmarked)
+##  Learning Resources (Bookmarked)
 
 ### Primary Resources:
 ```
@@ -193,7 +193,7 @@ Research Papers:  docs/research_paper/BIBLIOGRAPHY.md
 
 ---
 
-## ⏱️ Time Commitment
+## ⏱ Time Commitment
 
 ### **Minimum** (to start coding comfortably):
 - **Week 1 essentials**: 8 hours
@@ -213,23 +213,23 @@ Research Papers:  docs/research_paper/BIBLIOGRAPHY.md
 
 ---
 
-## ✅ When You're Ready to Code
+##  When You're Ready to Code
 
 **You'll know you're ready when you can**:
 
-1. ✅ Explain how BERT works in 2 minutes
-2. ✅ Fine-tune BERT on a simple dataset
-3. ✅ Build a basic RAG system
-4. ✅ Create a FastAPI endpoint
-5. ✅ Understand your chapo-bot architecture
+1.  Explain how BERT works in 2 minutes
+2.  Fine-tune BERT on a simple dataset
+3.  Build a basic RAG system
+4.  Create a FastAPI endpoint
+5.  Understand your chapo-bot architecture
 
 **Then ping me and we'll start coding together!**
 
 ---
 
-## 🎯 Immediate Next Steps (Today)
+##  Immediate Next Steps (Today)
 
-### **1. Read this file** ✅ (You're doing it!)
+### **1. Read this file**  (You're doing it!)
 
 ### **2. Review chapo-bot** (2 hours)
 ```bash
@@ -261,7 +261,7 @@ python src/nlp/intent/classifier.py
 
 ---
 
-## 📞 Questions?
+##  Questions?
 
 **Stuck?** Check:
 1. `STUDY_GUIDE_PHASE1.md` (detailed guide)
@@ -272,21 +272,21 @@ python src/nlp/intent/classifier.py
 
 ---
 
-## 🎊 You're in Good Shape!
+##  You're in Good Shape!
 
 You already have:
-- ✅ Chapo-bot experience (huge head start)
-- ✅ ML background (MSc Data Science)
-- ✅ Python expertise
-- ✅ Production experience (Islington Robotica)
-- ✅ Complete project structure
-- ✅ Clear roadmap
+-  Chapo-bot experience (huge head start)
+-  ML background (MSc Data Science)
+-  Python expertise
+-  Production experience (Islington Robotica)
+-  Complete project structure
+-  Clear roadmap
 
 **The study is just to level up on specific tools (Transformers, RAG, ONNX) before we build at scale.**
 
 ---
 
-**Start with reviewing your chapo-bot code today. Everything builds from there!** 🚀
+**Start with reviewing your chapo-bot code today. Everything builds from there!** 
 
 **Author**: Victor Ibhafidon  
 **Organization**: Xtainless Technologies  

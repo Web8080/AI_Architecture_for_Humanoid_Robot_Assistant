@@ -180,7 +180,7 @@ class NLPService:
         # TTS Synthesizer
         self.tts_synthesizer = TTSSynthesizer() if TTS_AVAILABLE else None
         
-        logger.info("✓ NLP Service initialized")
+        logger.info(" NLP Service initialized")
         logger.info(f"  Components ready: {self.get_component_status()}")
     
     async def process(self, request: NLPRequest) -> NLPResponse:
@@ -213,7 +213,13 @@ class NLPService:
         intent_confidence = 0.0
         if self.intent_classifier:
             try:
-                intent, intent_confidence = self.intent_classifier.predict(request.text)
+                intent_result = self.intent_classifier.predict(request.text)
+                # Handle both tuple and IntentPrediction object returns
+                if hasattr(intent_result, 'intent'):
+                    intent = intent_result.intent.value if hasattr(intent_result.intent, 'value') else str(intent_result.intent)
+                    intent_confidence = intent_result.confidence
+                else:
+                    intent, intent_confidence = intent_result
                 tiers_used['intent'] = 'IntentClassifier'
             except Exception as e:
                 logger.error(f"Intent classification failed: {e}")
@@ -429,7 +435,7 @@ if __name__ == "__main__":
     status = service.get_detailed_status()
     print("\nComponent Status:")
     for component, ready in status['components'].items():
-        status_icon = "✓" if ready else "✗"
+        status_icon = "" if ready else ""
         print(f"  {status_icon} {component}: {ready}")
     
     print("\n" + "=" * 80)

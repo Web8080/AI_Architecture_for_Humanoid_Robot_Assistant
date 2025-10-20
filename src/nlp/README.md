@@ -102,47 +102,47 @@ User Query → Embedding (sentence-transformers)
 ## Architecture
 
 ```
-┌──────────────────────────────────────────────────────────────┐
-│                    NLP Service API                            │
-│  (FastAPI / gRPC - handles requests from Orchestrator)        │
-└─────────┬───────────────────────────────────────┬────────────┘
-          │                                       │
-    ┌─────▼──────┐                          ┌────▼──────┐
-    │   Input    │                          │  Output   │
-    │ Processing │                          │Generation │
-    │            │                          │           │
-    │ • ASR      │                          │ • Response│
-    │ • Cleaning │                          │   Gen     │
-    │ • Tokenize │                          │ • TTS     │
-    └─────┬──────┘                          └────▲──────┘
-          │                                      │
-    ┌─────▼──────────────────────────────────────┴──────┐
-    │            Core NLP Pipeline                      │
-    │                                                    │
-    │  ┌──────────┐  ┌──────────┐  ┌─────────────┐    │
-    │  │  Intent  │→ │ Entity   │→ │  Dialogue   │    │
-    │  │Classifier│  │Extractor │  │  Manager    │    │
-    │  └──────────┘  └──────────┘  └─────────────┘    │
-    │         ↓                            ↓            │
-    │  ┌──────────────┐            ┌─────────────┐    │
-    │  │   Emotion    │            │     RAG     │    │
-    │  │   Detector   │            │   System    │    │
-    │  └──────────────┘            └─────────────┘    │
-    │         ↓                            ↓            │
-    │  ┌────────────────────────────────────────┐     │
-    │  │         LLM (Edge or Cloud)            │     │
-    │  │  • Reasoning                           │     │
-    │  │  • Response Generation                 │     │
-    │  │  • Function Calling                    │     │
-    │  └────────────────────────────────────────┘     │
-    └──────────────────────────────────────────────────┘
+
+                    NLP Service API                            
+  (FastAPI / gRPC - handles requests from Orchestrator)        
+
+                                                 
+                              
+       Input                                Output   
+     Processing                           Generation 
+                                                     
+     • ASR                                 • Response
+     • Cleaning                              Gen     
+     • Tokenize                            • TTS     
+                              
+                                                
+    
+                Core NLP Pipeline                      
+                                                        
+              
+        Intent  →  Entity   →   Dialogue       
+      Classifier  Extractor     Manager        
+              
+             ↓                            ↓            
+                      
+         Emotion                     RAG         
+         Detector                  System        
+                      
+             ↓                            ↓            
+           
+               LLM (Edge or Cloud)                 
+        • Reasoning                                
+        • Response Generation                      
+        • Function Calling                         
+           
+    
                          ↕
-           ┌─────────────────────────┐
-           │    Memory Service       │
-           │  • Session Context      │
-           │  • User History         │
-           │  • Knowledge Base       │
-           └─────────────────────────┘
+           
+               Memory Service       
+             • Session Context      
+             • User History         
+             • Knowledge Base       
+           
 ```
 
 ---
