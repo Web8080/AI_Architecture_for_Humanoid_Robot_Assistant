@@ -2,7 +2,7 @@
 
 **A State-of-the-Art Embodied AI System for Humanoid Robotics**
 
-> **Note:** This system is designed for benign applications including search & rescue, healthcare assistance, industrial inspection, and research platforms. The architecture prioritizes safety, explainability, and human-centered design.
+> **Note:** This system is designed for benign applications including search & rescue, healthcare assistance, industrial inspection, and research platforms. The architecture prioritizes safety, explainability, and human-centered design. Overall Readiness: ~25% for Complete Physical Robot
 
 ##  Project Overview
 
