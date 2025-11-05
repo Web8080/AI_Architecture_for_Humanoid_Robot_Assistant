@@ -78,52 +78,12 @@ docker-compose up simulation
 
 ##  Documentation
 
-### Core Documentation
-- [README](README.md) - This file, project overview
-- [Project Roadmap](PROJECT_ROADMAP.md) - Development roadmap and milestones
-- [Project Summary](PROJECT_SUMMARY.md) - Executive summary
-- [Project Structure](STRUCTURE.md) - Directory organization
-- [Codebase Structure](CODEBASE_STRUCTURE.md) - Code organization details
+- [Project Roadmap](PROJECT_ROADMAP.md) - Development roadmap
+- [Project Summary](PROJECT_SUMMARY.md) - Executive summary  
+- [System Architecture](docs/architecture/SYSTEM_ARCHITECTURE.md) - Technical design
+- [Getting Started](docs/GETTING_STARTED.md) - Setup guide
 - [Documentation Index](DOCUMENTATION_INDEX.md) - Complete documentation map
-
-### Getting Started & Guides
-- [Getting Started](docs/GETTING_STARTED.md) - Setup and installation
-- [Start Here](docs/guides/START_HERE.md) - Comprehensive getting started guide
-- [Installation Guide](docs/guides/INSTALLATION.md) - Detailed installation instructions
-- [Study Guide Phase 1](docs/guides/STUDY_GUIDE_PHASE1.md) - Learning path for Phase 1
-- [Code Templates](docs/guides/CODE_TEMPLATES.md) - Code patterns and templates
-
-### Implementation Details
-- [System Architecture](docs/architecture/SYSTEM_ARCHITECTURE.md) - Complete system design
-- [NLP Implementation](docs/implementation/NLP_IMPLEMENTATION_SUMMARY.md) - NLP module details
-- [Computer Vision Implementation](docs/implementation/CV_IMPLEMENTATION_SUMMARY.md) - CV module details
-- [Advanced Memory Solution](docs/implementation/ADVANCED_MEMORY_SOLUTION.md) - Memory architecture
-- [MongoDB Integration](docs/implementation/MONGODB_AND_MEMORY_IMPLEMENTATION.md) - Database implementation
-- [Engine Architecture](docs/implementation/ENGINE_BASED_ARCHITECTURE_IMPLEMENTATION.md) - Engine framework
-- [Phase 3 Summary](docs/implementation/PHASE3_COMPLETE_SUMMARY.md) - Multimodal fusion
-- [Training Strategy](docs/implementation/TRAINING_AND_EVALUATION_STRATEGY.md) - ML training approach
-
-### Project Status & Progress
-- [Latest Status](docs/status/PROJECT_STATUS_FINAL.md) - Current implementation status
-- [Engine Roadmap 500](docs/status/ENGINE_ROADMAP_500.md) - 500-engine development plan
-- [Engine Build Status](docs/status/ENGINE_BUILD_STATUS.md) - Current engine progress
-- [October 2025 Status](docs/status/PROJECT_STATUS_OCT_2025.md) - October milestone
-- [Current Status](docs/status/CURRENT_STATUS_AND_NEXT_STEPS.md) - Status and next steps
-- [Session Summary](docs/status/SESSION_SUMMARY_COMPLETE.md) - Development sessions
-- [Final Session Report](docs/status/FINAL_SESSION_REPORT.md) - Session achievements
-- [Today's Achievements](docs/status/TODAYS_ACHIEVEMENTS.md) - Daily progress
-
-### Testing & Validation
-- [Test Results](docs/testing/TEST_RESULTS.md) - Comprehensive test results
-- [Integration Tests](docs/testing/TEST_RESULTS_INTEGRATION.md) - Integration test results
-
-### Research Paper
-- [Research Paper](docs/research_paper/main.tex) - Academic paper (LaTeX)
-- [Paper Outline](docs/research_paper/00_PAPER_OUTLINE.md) - Paper structure
-- [Bibliography](docs/research_paper/BIBLIOGRAPHY.md) - Reference sources
-- [BibTeX References](docs/research_paper/references.bib) - Citations database
-
-**Note:** API Reference, Training Guide, and Deployment Guide are under active development.
+- [Research Paper](docs/research_paper/main.tex) - Academic paper
 
 ##  Project Structure
 
