@@ -621,6 +621,5 @@ Tier 3: Haar Cascades (classical, always works)
 **Status:** Ready for Phase 1 (Evaluation) implementation
 
 **Author:** Victor Ibhafidon  
-**Perspective:** Senior ML Engineer (5-10 years)  
 **Date:** October 2025
 
