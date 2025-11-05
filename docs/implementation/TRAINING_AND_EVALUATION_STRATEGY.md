@@ -1,5 +1,4 @@
 # Training & Evaluation Strategy
-## Senior ML Engineer Perspective
 
 **Author:** Victor Ibhafidon (5-10 Years Experience)  
 **Date:** October 2025  
