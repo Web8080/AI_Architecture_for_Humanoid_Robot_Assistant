@@ -12,7 +12,7 @@
 **Focus**: Transformers, BERT, PyTorch basics
 
 **Most Important**:
-1.  **Review your chapo-bot code** (4 hours)
+1.  **Review chapo-bot code** (4 hours)
    - `/Users/user/chapo-bot-backend/backend/`
    - Understand intent routing, session management, emotion detection
    
@@ -67,7 +67,7 @@
 
 ##  Top 5 Things to Master (Priority Order)
 
-### 1. **Your Chapo-Bot Architecture** 
+### 1. ** Chapo-Bot Architecture** 
 **Why**: We're evolving it, not starting from scratch  
 **Time**: 4 hours  
 **Action**: Read and diagram the code flow
@@ -94,7 +94,7 @@
 
 ---
 
-##  Your First Practical Exercise (Do This Weekend)
+##   First Practical Exercise (Do This Weekend)
 
 ### **Build a Mini Intent Classifier** (4-6 hours)
 
@@ -223,7 +223,6 @@ Research Papers:  docs/research_paper/BIBLIOGRAPHY.md
 4.  Create a FastAPI endpoint
 5.  Understand your chapo-bot architecture
 
-**Then ping me and we'll start coding together!**
 
 ---
 
@@ -268,25 +267,8 @@ python src/nlp/intent/classifier.py
 2. `docs/GETTING_STARTED.md` (setup help)
 3. `docs/PROJECT_ROADMAP.md` (big picture)
 
-**Ready to code?** Let me know and we'll start building!
-
 ---
 
-##  You're in Good Shape!
-
-You already have:
--  Chapo-bot experience (huge head start)
--  ML background (MSc Data Science)
--  Python expertise
--  Production experience (Islington Robotica)
--  Complete project structure
--  Clear roadmap
-
-**The study is just to level up on specific tools (Transformers, RAG, ONNX) before we build at scale.**
-
----
-
-**Start with reviewing your chapo-bot code today. Everything builds from there!** 
 
 **Author**: Victor Ibhafidon  
 **Organization**: Xtainless Technologies  
