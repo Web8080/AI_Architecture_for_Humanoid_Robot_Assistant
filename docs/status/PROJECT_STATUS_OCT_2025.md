@@ -147,29 +147,29 @@ Successfully implemented a production-grade AI system for humanoid robots with c
 
 ```
 project_root/
-├── src/                          # Production code
-│   ├── nlp/                     # 8 NLP components
-│   └── vision/                  # 6 CV components
-│
-├── tests/                        # All testing (NEW STRUCTURE)
-│   ├── unit/                    # Unit tests
-│   ├── integration/             # End-to-end tests
-│   │   ├── test_nlp_comprehensive.py
-│   │   └── test_vision_comprehensive.py
-│   └── simulation/              # Simulation testing
-│       └── sim_environment.py   # 130 scenarios generated
-│
-├── training/                     # Model training (NEW)
-│   ├── finetune_yolov11.py     # YOLOv11 pipeline
-│   └── configs/                 # Training configs
-│
-├── evaluation/                   # Metrics & benchmarks (NEW)
-│   └── metrics.py              # mAP, IoU, P/R/F1
-│
-├── data_collection/             # Data strategy (NEW)
-│   └── scenarios.py            # 10 robust scenarios
-│
-└── benchmarks/                   # Performance tests (NEW)
+ src/                          # Production code
+    nlp/                     # 8 NLP components
+    vision/                  # 6 CV components
+
+ tests/                        # All testing (NEW STRUCTURE)
+    unit/                    # Unit tests
+    integration/             # End-to-end tests
+       test_nlp_comprehensive.py
+       test_vision_comprehensive.py
+    simulation/              # Simulation testing
+        sim_environment.py   # 130 scenarios generated
+
+ training/                     # Model training (NEW)
+    finetune_yolov11.py     # YOLOv11 pipeline
+    configs/                 # Training configs
+
+ evaluation/                   # Metrics & benchmarks (NEW)
+    metrics.py              # mAP, IoU, P/R/F1
+
+ data_collection/             # Data strategy (NEW)
+    scenarios.py            # 10 robust scenarios
+
+ benchmarks/                   # Performance tests (NEW)
 ```
 
 **Key Improvements:**

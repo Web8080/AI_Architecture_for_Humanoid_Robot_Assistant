@@ -4,7 +4,7 @@ Quick reference to find all documentation in the humanoid robot project.
 
 ---
 
-## 📚 START HERE
+##  START HERE
 
 **New to the project? Start with these:**
 
@@ -15,7 +15,7 @@ Quick reference to find all documentation in the humanoid robot project.
 
 ---
 
-## 📖 GUIDES & TUTORIALS
+##  GUIDES & TUTORIALS
 
 **Learning paths and how-to guides:**
 
@@ -27,7 +27,7 @@ Quick reference to find all documentation in the humanoid robot project.
 
 ---
 
-## 🏗️ IMPLEMENTATION DETAILS
+##  IMPLEMENTATION DETAILS
 
 **Technical implementation documentation:**
 
@@ -41,7 +41,7 @@ Quick reference to find all documentation in the humanoid robot project.
 
 ---
 
-## 📊 PROJECT STATUS
+##  PROJECT STATUS
 
 **Current development status and progress:**
 
@@ -56,7 +56,7 @@ Quick reference to find all documentation in the humanoid robot project.
 
 ---
 
-## 🧪 TESTING & VALIDATION
+##  TESTING & VALIDATION
 
 **Test results and validation reports:**
 
@@ -65,7 +65,7 @@ Quick reference to find all documentation in the humanoid robot project.
 
 ---
 
-## 🏛️ ARCHITECTURE
+##  ARCHITECTURE
 
 **System architecture and design:**
 
@@ -75,7 +75,7 @@ Quick reference to find all documentation in the humanoid robot project.
 
 ---
 
-## 📝 RESEARCH PAPER
+##  RESEARCH PAPER
 
 **Academic research documentation:**
 
@@ -86,55 +86,55 @@ Quick reference to find all documentation in the humanoid robot project.
 
 ---
 
-## 📁 DOCUMENTATION ORGANIZATION
+##  DOCUMENTATION ORGANIZATION
 
 ```
 /
-├── README.md                          # Main project overview
-├── PROJECT_SUMMARY.md                 # High-level summary
-├── STRUCTURE.md                       # Directory structure
-├── CODEBASE_STRUCTURE.md             # Code organization
-├── DOCUMENTATION_INDEX.md            # This file
-│
-├── docs/
-│   ├── guides/                       # Learning and setup guides
-│   │   ├── START_HERE.md
-│   │   ├── STUDY_GUIDE_PHASE1.md
-│   │   ├── INSTALLATION.md
-│   │   └── CODE_TEMPLATES.md
-│   │
-│   ├── implementation/               # Technical implementation docs
-│   │   ├── NLP_IMPLEMENTATION_SUMMARY.md
-│   │   ├── CV_IMPLEMENTATION_SUMMARY.md
-│   │   ├── ADVANCED_MEMORY_SOLUTION.md
-│   │   ├── MONGODB_AND_MEMORY_IMPLEMENTATION.md
-│   │   ├── ENGINE_BASED_ARCHITECTURE_IMPLEMENTATION.md
-│   │   ├── PHASE3_COMPLETE_SUMMARY.md
-│   │   └── TRAINING_AND_EVALUATION_STRATEGY.md
-│   │
-│   ├── status/                       # Project status and progress
-│   │   ├── PROJECT_STATUS_FINAL.md
-│   │   ├── ENGINE_ROADMAP_500.md
-│   │   ├── ENGINE_BUILD_STATUS.md
-│   │   ├── PROJECT_STATUS_OCT_2025.md
-│   │   └── (other session reports)
-│   │
-│   ├── testing/                      # Test results
-│   │   ├── TEST_RESULTS.md
-│   │   └── TEST_RESULTS_INTEGRATION.md
-│   │
-│   ├── architecture/                 # System architecture
-│   │   └── SYSTEM_ARCHITECTURE.md
-│   │
-│   └── research_paper/               # Academic paper
-│       ├── main.tex
-│       ├── 00_PAPER_OUTLINE.md
-│       └── references.bib
+ README.md                          # Main project overview
+ PROJECT_SUMMARY.md                 # High-level summary
+ STRUCTURE.md                       # Directory structure
+ CODEBASE_STRUCTURE.md             # Code organization
+ DOCUMENTATION_INDEX.md            # This file
+
+ docs/
+    guides/                       # Learning and setup guides
+       START_HERE.md
+       STUDY_GUIDE_PHASE1.md
+       INSTALLATION.md
+       CODE_TEMPLATES.md
+   
+    implementation/               # Technical implementation docs
+       NLP_IMPLEMENTATION_SUMMARY.md
+       CV_IMPLEMENTATION_SUMMARY.md
+       ADVANCED_MEMORY_SOLUTION.md
+       MONGODB_AND_MEMORY_IMPLEMENTATION.md
+       ENGINE_BASED_ARCHITECTURE_IMPLEMENTATION.md
+       PHASE3_COMPLETE_SUMMARY.md
+       TRAINING_AND_EVALUATION_STRATEGY.md
+   
+    status/                       # Project status and progress
+       PROJECT_STATUS_FINAL.md
+       ENGINE_ROADMAP_500.md
+       ENGINE_BUILD_STATUS.md
+       PROJECT_STATUS_OCT_2025.md
+       (other session reports)
+   
+    testing/                      # Test results
+       TEST_RESULTS.md
+       TEST_RESULTS_INTEGRATION.md
+   
+    architecture/                 # System architecture
+       SYSTEM_ARCHITECTURE.md
+   
+    research_paper/               # Academic paper
+        main.tex
+        00_PAPER_OUTLINE.md
+        references.bib
 ```
 
 ---
 
-## 🔍 QUICK FIND
+##  QUICK FIND
 
 **Looking for something specific?**
 

@@ -133,27 +133,27 @@ NEVER FAILS
 ### File Structure
 ```
 src/vision/
-├── __init__.py
-├── vision_service.py          # Unified service
-├── object_detection/
-│   ├── __init__.py
-│   └── detector.py
-├── segmentation/
-│   ├── __init__.py
-│   └── segmenter.py
-├── depth/
-│   ├── __init__.py
-│   └── estimator.py
-├── pose/
-│   ├── __init__.py
-│   └── estimator.py
-├── face/
-│   ├── __init__.py
-│   └── recognizer.py
-├── scene/
-│   ├── __init__.py
-│   └── analyzer.py
-└── README.md
+ __init__.py
+ vision_service.py          # Unified service
+ object_detection/
+    __init__.py
+    detector.py
+ segmentation/
+    __init__.py
+    segmenter.py
+ depth/
+    __init__.py
+    estimator.py
+ pose/
+    __init__.py
+    estimator.py
+ face/
+    __init__.py
+    recognizer.py
+ scene/
+    __init__.py
+    analyzer.py
+ README.md
 ```
 
 ---

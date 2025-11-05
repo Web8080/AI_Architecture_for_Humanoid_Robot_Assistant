@@ -10,7 +10,7 @@ This document summarizes the implementation of a robust **engine-based architect
 
 ## What We've Built
 
-### 1. Base Engine Framework ✅
+### 1. Base Engine Framework 
 
 **File:** `src/engines/base_engine.py`
 
@@ -27,7 +27,7 @@ This document summarizes the implementation of a robust **engine-based architect
 - Automatic performance metrics (success rate, latency, execution count)
 - Entity validation helpers
 
-### 2. Intent Router ✅
+### 2. Intent Router 
 
 **File:** `src/intent_router/router.py`
 
@@ -58,7 +58,7 @@ This document summarizes the implementation of a robust **engine-based architect
 
 ### 3. Sample Engines
 
-#### Object Grasping Engine ✅
+#### Object Grasping Engine 
 
 **File:** `src/engines/object_manipulation/grasping_engine.py`
 
@@ -72,13 +72,13 @@ This document summarizes the implementation of a robust **engine-based architect
 - **Tier 2**: Heuristic-based grasping (shape primitives)
 - **Tier 3**: Simple parallel jaw grasp (always works)
 
-### 4. Training Data Generation ✅
+### 4. Training Data Generation 
 
 **File:** `scripts/data_generation/generate_mega_training_data.py`
 
 **Current Status:**
-- ✅ 679 utterances generated
-- ✅ 70 unique intents
+-  679 utterances generated
+-  70 unique intents
 - ⏳ Target: 5000+ utterances, 1000+ intents
 
 **Data Categories:**
@@ -92,7 +92,7 @@ This document summarizes the implementation of a robust **engine-based architect
 - Home automation (lights, TV, music, etc.)
 - Entertainment (joke, story, game, etc.)
 
-### 5. Wit.ai Integration ✅
+### 5. Wit.ai Integration 
 
 **File:** `scripts/training/wit_ai_upload_robot_intents.py`
 
@@ -156,12 +156,12 @@ User Input
 NLP Module (intent classification + entity extraction)
     ↓
 Intent Router
-    ├─ Normalize intent
-    ├─ Get session context
-    ├─ Map to engines
-    └─ Execute engines → [Engine1, Engine2, ...]
-        ├─ Each engine: Tier 1 → Tier 2 → Tier 3
-        └─ Aggregate responses
+     Normalize intent
+     Get session context
+     Map to engines
+     Execute engines → [Engine1, Engine2, ...]
+         Each engine: Tier 1 → Tier 2 → Tier 3
+         Aggregate responses
     ↓
 RouterResponse (success/failure, message, data)
     ↓
@@ -172,64 +172,64 @@ User Response (text, speech, action)
 
 ```
 src/
-├── engines/
-│   ├── __init__.py
-│   ├── base_engine.py                    # Base class
-│   ├── object_manipulation/
-│   │   ├── __init__.py
-│   │   ├── grasping_engine.py           # ✅ Implemented
-│   │   ├── placement_engine.py          # ⏳ To implement
-│   │   ├── transfer_engine.py           # ⏳ To implement
-│   │   ├── opening_engine.py            # ⏳ To implement
-│   │   ├── closing_engine.py            # ⏳ To implement
-│   │   ├── pouring_engine.py            # ⏳ To implement
-│   │   ├── stacking_engine.py           # ⏳ To implement
-│   │   └── ... (20+ engines)
-│   ├── navigation/
-│   │   ├── __init__.py
-│   │   ├── path_planning_engine.py      # ⏳ To implement
-│   │   ├── navigation_engine.py         # ⏳ To implement
-│   │   ├── turn_engine.py               # ⏳ To implement
-│   │   ├── follow_engine.py             # ⏳ To implement
-│   │   └── ... (15+ engines)
-│   ├── vision/
-│   │   ├── __init__.py
-│   │   ├── scene_understanding_engine.py # ⏳ To implement
-│   │   ├── object_detection_engine.py    # ⏳ To implement
-│   │   ├── face_recognition_engine.py    # ⏳ To implement
-│   │   └── ... (15+ engines)
-│   ├── interaction/
-│   │   ├── __init__.py
-│   │   ├── greeting_engine.py           # ⏳ To implement
-│   │   ├── farewell_engine.py           # ⏳ To implement
-│   │   ├── joke_engine.py               # ⏳ To implement
-│   │   └── ... (20+ engines)
-│   ├── memory/
-│   ├── planning/
-│   ├── safety/
-│   ├── control/
-│   ├── perception/
-│   └── learning/
-├── intent_router/
-│   ├── __init__.py
-│   └── router.py                         # ✅ Implemented
-└── ...
+ engines/
+    __init__.py
+    base_engine.py                    # Base class
+    object_manipulation/
+       __init__.py
+       grasping_engine.py           #  Implemented
+       placement_engine.py          # ⏳ To implement
+       transfer_engine.py           # ⏳ To implement
+       opening_engine.py            # ⏳ To implement
+       closing_engine.py            # ⏳ To implement
+       pouring_engine.py            # ⏳ To implement
+       stacking_engine.py           # ⏳ To implement
+       ... (20+ engines)
+    navigation/
+       __init__.py
+       path_planning_engine.py      # ⏳ To implement
+       navigation_engine.py         # ⏳ To implement
+       turn_engine.py               # ⏳ To implement
+       follow_engine.py             # ⏳ To implement
+       ... (15+ engines)
+    vision/
+       __init__.py
+       scene_understanding_engine.py # ⏳ To implement
+       object_detection_engine.py    # ⏳ To implement
+       face_recognition_engine.py    # ⏳ To implement
+       ... (15+ engines)
+    interaction/
+       __init__.py
+       greeting_engine.py           # ⏳ To implement
+       farewell_engine.py           # ⏳ To implement
+       joke_engine.py               # ⏳ To implement
+       ... (20+ engines)
+    memory/
+    planning/
+    safety/
+    control/
+    perception/
+    learning/
+ intent_router/
+    __init__.py
+    router.py                         #  Implemented
+ ...
 
 scripts/
-├── data_generation/
-│   └── generate_mega_training_data.py    # ✅ Implemented
-└── training/
-    └── wit_ai_upload_robot_intents.py    # ✅ Implemented
+ data_generation/
+    generate_mega_training_data.py    #  Implemented
+ training/
+     wit_ai_upload_robot_intents.py    #  Implemented
 
 data/
-└── intent_training/
-    ├── robot_intents_mega_dataset.csv    # ✅ 679 utterances
-    └── robot_mega_training_dataset.csv   # ✅ 679 utterances
+ intent_training/
+     robot_intents_mega_dataset.csv    #  679 utterances
+     robot_mega_training_dataset.csv   #  679 utterances
 ```
 
 ## Progress Summary
 
-### ✅ Completed (Phase 1 Foundation)
+###  Completed (Phase 1 Foundation)
 
 1. **Base Engine Framework**
    - BaseEngine abstract class
@@ -283,12 +283,12 @@ data/
    - Grasp Planning
    - Multi-step task execution
 
-### 📋 Next Steps
+###  Next Steps
 
 1. **Immediate (This Session)**
-   - ✅ Create more engines (targeting 50+)
-   - ✅ Expand training data to 2000+ utterances
-   - ✅ Push to GitHub
+   -  Create more engines (targeting 50+)
+   -  Expand training data to 2000+ utterances
+   -  Push to GitHub
    - ⏳ Implement Phase 4 core components
 
 2. **Short-term (This Week)**
@@ -326,40 +326,40 @@ data/
 ## Integration with Existing Modules
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                        User Input                            │
-└──────────────────┬──────────────────────────────────────────┘
+
+                        User Input                            
+
                    ↓
-┌─────────────────────────────────────────────────────────────┐
-│  NLP Module (Phase 1)                                        │
-│  - Intent Classification (Wit.ai + fallbacks)                │
-│  - Entity Extraction                                         │
-│  - Dialogue Management                                       │
-└──────────────────┬──────────────────────────────────────────┘
+
+  NLP Module (Phase 1)                                        
+  - Intent Classification (Wit.ai + fallbacks)                
+  - Entity Extraction                                         
+  - Dialogue Management                                       
+
                    ↓
-┌─────────────────────────────────────────────────────────────┐
-│  Intent Router ⭐ NEW                                        │
-│  - Normalize intent                                          │
-│  - Map to engines                                            │
-│  - Manage session context                                    │
-└──────────────────┬──────────────────────────────────────────┘
+
+  Intent Router  NEW                                        
+  - Normalize intent                                          
+  - Map to engines                                            
+  - Manage session context                                    
+
                    ↓
-┌─────────────────────────────────────────────────────────────┐
-│  Engines (500+) ⭐ NEW                                       │
-│  ├─ Vision Service (Phase 2)                                │
-│  ├─ Multimodal Fusion (Phase 3)                             │
-│  ├─ Task Planning (Phase 4)                                 │
-│  ├─ Object Manipulation Engines                             │
-│  ├─ Navigation Engines                                       │
-│  └─ ... (all capability engines)                            │
-└──────────────────┬──────────────────────────────────────────┘
+
+  Engines (500+)  NEW                                       
+   Vision Service (Phase 2)                                
+   Multimodal Fusion (Phase 3)                             
+   Task Planning (Phase 4)                                 
+   Object Manipulation Engines                             
+   Navigation Engines                                       
+   ... (all capability engines)                            
+
                    ↓
-┌─────────────────────────────────────────────────────────────┐
-│  Robot Execution                                             │
-│  - Physical actions                                          │
-│  - Speech responses                                          │
-│  - Visual feedback                                           │
-└─────────────────────────────────────────────────────────────┘
+
+  Robot Execution                                             
+  - Physical actions                                          
+  - Speech responses                                          
+  - Visual feedback                                           
+
 ```
 
 ## Why This Architecture?
@@ -376,17 +376,17 @@ data/
 
 | Feature | Chapo Bot | Our Robot | Status |
 |---------|-----------|-----------|--------|
-| Engine-based architecture | ✅ | ✅ | Complete |
-| Intent Router | ✅ | ✅ | Complete |
-| Multi-engine coordination | ✅ | ✅ | Complete |
-| Session management | ✅ | ✅ | Complete |
-| Wit.ai integration | ✅ | ✅ | Complete |
+| Engine-based architecture |  |  | Complete |
+| Intent Router |  |  | Complete |
+| Multi-engine coordination |  |  | Complete |
+| Session management |  |  | Complete |
+| Wit.ai integration |  |  | Complete |
 | Number of engines | ~15 | 500+ (planned) | 1/500 done |
 | Number of intents | ~50 | 1000+ (planned) | 70/1000 done |
-| Multi-tier fallback | ❌ | ✅ | Our innovation |
-| Robotics capabilities | ❌ | ✅ | In progress |
-| Vision integration | ❌ | ✅ | Phase 2 complete |
-| Multimodal fusion | ❌ | ✅ | Phase 3 complete |
+| Multi-tier fallback |  |  | Our innovation |
+| Robotics capabilities |  |  | In progress |
+| Vision integration |  |  | Phase 2 complete |
+| Multimodal fusion |  |  | Phase 3 complete |
 
 ---
 

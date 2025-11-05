@@ -13,89 +13,89 @@ This document explains the complete codebase structure, where to find each scrip
 
 ```
 humaniod_robot_assitant/
-│
-├── src/                          # Core source code (production)
-│   ├── nlp/                     # Natural Language Processing module
-│   │   ├── intent/              # Intent classification
-│   │   ├── entities/            # Entity extraction (NER)
-│   │   ├── emotion/             # Emotion detection
-│   │   ├── dialogue/            # Dialogue management
-│   │   ├── rag/                 # RAG system
-│   │   ├── llm/                 # LLM integration
-│   │   ├── asr/                 # Speech recognition
-│   │   ├── tts/                 # Text-to-speech
-│   │   └── nlp_service.py       # Unified NLP service
-│   │
-│   └── vision/                  # Computer Vision module
-│       ├── object_detection/    # Object detector
-│       ├── segmentation/        # Segmentation
-│       ├── depth/               # Depth estimation
-│       ├── pose/                # Pose estimation
-│       ├── face/                # Face recognition
-│       ├── scene/               # Scene understanding
-│       └── vision_service.py    # Unified Vision service
-│
-├── tests/                        # All testing code
-│   ├── unit/                    # Unit tests (per component)
-│   │   ├── test_nlp_components.py
-│   │   └── test_cv_components.py
-│   │
-│   ├── integration/             # Integration & end-to-end tests
-│   │   ├── test_nlp_comprehensive.py    # Full NLP pipeline test
-│   │   └── test_vision_comprehensive.py # Full CV pipeline test
-│   │
-│   └── simulation/              # Simulation-based testing
-│       ├── sim_environment.py   # Generates synthetic scenarios
-│       └── README.md            # Simulation testing guide
-│
-├── training/                     # Model training & fine-tuning
-│   ├── finetune_yolov11.py     # YOLOv11 fine-tuning pipeline
-│   ├── finetune_sam.py         # SAM fine-tuning (future)
-│   ├── configs/                 # Training configurations
-│   │   └── robot_objects.yaml  # Dataset config template
-│   └── runs/                    # Training runs & checkpoints
-│
-├── evaluation/                   # Model evaluation & metrics
-│   ├── metrics.py              # CV metrics (mAP, IoU, etc.)
-│   ├── nlp_metrics.py          # NLP metrics (F1, accuracy)
-│   └── benchmark_results/       # Evaluation results
-│
-├── data_collection/             # Data collection strategies
-│   ├── collection_strategy.py  # 10 robust scenarios
-│   ├── annotation_guidelines.md
-│   └── README.md
-│
-├── benchmarks/                  # Performance benchmarking
-│   ├── latency_benchmark.py    # Measure inference speed
-│   ├── accuracy_benchmark.py   # Measure model accuracy
-│   └── tier_comparison.py      # Compare Tier 1/2/3
-│
-├── configs/                     # Configuration files
-│   └── base/
-│       └── system_config.yaml  # Master system configuration
-│
-├── scripts/                     # Utility scripts only
-│   └── setup/
-│       └── setup_nlp_module.sh # Environment setup
-│
-├── docs/                        # Documentation
-│   ├── architecture/
-│   ├── research_paper/
-│   └── PROJECT_ROADMAP.md
-│
-├── deployment/                  # Deployment configs
-│   └── docker/
-│       └── docker-compose.yml
-│
-├── data/                        # Data storage (gitignored)
-│   ├── collected/              # Real-world collected data
-│   ├── synthetic/              # Simulation-generated data
-│   └── processed/              # Preprocessed datasets
-│
-└── models/                      # Trained models (gitignored)
-    ├── yolov11_robot_v1.pt
-    ├── yolov11_robot_v2.pt
-    └── model_registry.json
+
+ src/                          # Core source code (production)
+    nlp/                     # Natural Language Processing module
+       intent/              # Intent classification
+       entities/            # Entity extraction (NER)
+       emotion/             # Emotion detection
+       dialogue/            # Dialogue management
+       rag/                 # RAG system
+       llm/                 # LLM integration
+       asr/                 # Speech recognition
+       tts/                 # Text-to-speech
+       nlp_service.py       # Unified NLP service
+   
+    vision/                  # Computer Vision module
+        object_detection/    # Object detector
+        segmentation/        # Segmentation
+        depth/               # Depth estimation
+        pose/                # Pose estimation
+        face/                # Face recognition
+        scene/               # Scene understanding
+        vision_service.py    # Unified Vision service
+
+ tests/                        # All testing code
+    unit/                    # Unit tests (per component)
+       test_nlp_components.py
+       test_cv_components.py
+   
+    integration/             # Integration & end-to-end tests
+       test_nlp_comprehensive.py    # Full NLP pipeline test
+       test_vision_comprehensive.py # Full CV pipeline test
+   
+    simulation/              # Simulation-based testing
+        sim_environment.py   # Generates synthetic scenarios
+        README.md            # Simulation testing guide
+
+ training/                     # Model training & fine-tuning
+    finetune_yolov11.py     # YOLOv11 fine-tuning pipeline
+    finetune_sam.py         # SAM fine-tuning (future)
+    configs/                 # Training configurations
+       robot_objects.yaml  # Dataset config template
+    runs/                    # Training runs & checkpoints
+
+ evaluation/                   # Model evaluation & metrics
+    metrics.py              # CV metrics (mAP, IoU, etc.)
+    nlp_metrics.py          # NLP metrics (F1, accuracy)
+    benchmark_results/       # Evaluation results
+
+ data_collection/             # Data collection strategies
+    collection_strategy.py  # 10 robust scenarios
+    annotation_guidelines.md
+    README.md
+
+ benchmarks/                  # Performance benchmarking
+    latency_benchmark.py    # Measure inference speed
+    accuracy_benchmark.py   # Measure model accuracy
+    tier_comparison.py      # Compare Tier 1/2/3
+
+ configs/                     # Configuration files
+    base/
+        system_config.yaml  # Master system configuration
+
+ scripts/                     # Utility scripts only
+    setup/
+        setup_nlp_module.sh # Environment setup
+
+ docs/                        # Documentation
+    architecture/
+    research_paper/
+    PROJECT_ROADMAP.md
+
+ deployment/                  # Deployment configs
+    docker/
+        docker-compose.yml
+
+ data/                        # Data storage (gitignored)
+    collected/              # Real-world collected data
+    synthetic/              # Simulation-generated data
+    processed/              # Preprocessed datasets
+
+ models/                      # Trained models (gitignored)
+     yolov11_robot_v1.pt
+     yolov11_robot_v2.pt
+     model_registry.json
 ```
 
 ---

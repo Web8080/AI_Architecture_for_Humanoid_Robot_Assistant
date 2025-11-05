@@ -395,7 +395,7 @@ utterance,intent,entities
 
 ## Next Steps
 
-1. ✅ Create engine directory structure
+1.  Create engine directory structure
 2. ⏳ Implement core engines (object manipulation, navigation)
 3. ⏳ Build Intent Router with engine mapping
 4. ⏳ Generate comprehensive training data (1000+ intents)

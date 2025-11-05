@@ -86,14 +86,14 @@ Created: `/evaluation/cv_evaluation.py`
 **Benchmark Datasets:**
 ```
 datasets/
-├── coco/                    # 80 classes, 330K images
-├── lvis/                    # 1203 classes, long-tail
-├── objects365/              # 365 classes, diverse
-└── robot_specific/          # COLLECT THIS!
-    ├── kitchen_tasks/
-    ├── navigation/
-    ├── human_interaction/
-    └── edge_cases/
+ coco/                    # 80 classes, 330K images
+ lvis/                    # 1203 classes, long-tail
+ objects365/              # 365 classes, diverse
+ robot_specific/          # COLLECT THIS!
+     kitchen_tasks/
+     navigation/
+     human_interaction/
+     edge_cases/
 ```
 
 **Why Robot-Specific Data is Critical:**
@@ -200,23 +200,23 @@ results = model.train(
 
 ```
 training/
-├── configs/
-│   ├── yolov11_robot.yaml
-│   ├── sam_lora.yaml
-│   └── midas_calibration.yaml
-├── scripts/
-│   ├── train_yolov11.py
-│   ├── train_sam.py
-│   └── calibrate_midas.py
-├── experiments/
-│   ├── mlflow/              # Experiment tracking
-│   └── wandb/               # Visualization
-├── checkpoints/
-│   ├── yolov11_best.pt
-│   ├── yolov11_last.pt
-│   └── versions/
-└── logs/
-    └── training_logs/
+ configs/
+    yolov11_robot.yaml
+    sam_lora.yaml
+    midas_calibration.yaml
+ scripts/
+    train_yolov11.py
+    train_sam.py
+    calibrate_midas.py
+ experiments/
+    mlflow/              # Experiment tracking
+    wandb/               # Visualization
+ checkpoints/
+    yolov11_best.pt
+    yolov11_last.pt
+    versions/
+ logs/
+     training_logs/
 ```
 
 ### 3.3 Experiment Tracking
@@ -569,7 +569,7 @@ Tier 3: Haar Cascades (classical, always works)
 ## Next Steps (Prioritized)
 
 ### Week 1: Evaluation Framework
-1. ✅ Create evaluation script (DONE)
+1.  Create evaluation script (DONE)
 2. Define benchmark datasets
 3. Establish baseline metrics
 4. Run initial evaluation

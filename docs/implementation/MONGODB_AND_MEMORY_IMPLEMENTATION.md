@@ -10,7 +10,7 @@ Comprehensive MongoDB-based memory and logging system for the humanoid robot, in
 
 ## What We've Built
 
-### 1. MongoDB Manager (`src/memory/mongodb_manager.py`) ✅
+### 1. MongoDB Manager (`src/memory/mongodb_manager.py`) 
 
 **700+ lines of production-ready code**
 
@@ -105,11 +105,11 @@ Intent Router
 Engines Execute
       ↓
 MongoDB Manager
-      ├─ Log Interaction
-      ├─ Store Episodic Memory
-      ├─ Update User Profile
-      ├─ Log Performance Metrics
-      └─ Save Conversation Turn
+       Log Interaction
+       Store Episodic Memory
+       Update User Profile
+       Log Performance Metrics
+       Save Conversation Turn
       ↓
 Persistent Storage (MongoDB Atlas)
 ```
@@ -120,10 +120,10 @@ Persistent Storage (MongoDB Atlas)
 Engine Needs Context
       ↓
 MongoDB Manager
-      ├─ Recall Episodic Memories
-      ├─ Query Semantic Knowledge
-      ├─ Get User Profile
-      └─ Retrieve Conversation History
+       Recall Episodic Memories
+       Query Semantic Knowledge
+       Get User Profile
+       Retrieve Conversation History
       ↓
 Context Assembled
       ↓
@@ -366,15 +366,15 @@ export MONGODB_CLUSTER="cluster0.mongodb.net"  # Optional
 
 | Feature | Chapo Bot | Our Robot | Enhancement |
 |---------|-----------|-----------|-------------|
-| Interaction logging | ✅ | ✅ | + Detailed engine tracking |
-| Basic memory | ✅ | ✅ | + Episodic/semantic split |
-| User profiles | ❌ | ✅ | New feature |
-| Performance metrics | Limited | ✅ Comprehensive | Full analytics |
-| Feedback logging | ✅ | ✅ | + Learning integration |
-| Conversation history | ✅ | ✅ | + Context preservation |
-| Analytics | Limited | ✅ Advanced | Aggregation pipelines |
-| Data cleanup | ❌ | ✅ | Automatic retention |
-| Importance weighting | ❌ | ✅ | Smart memory retention |
+| Interaction logging |  |  | + Detailed engine tracking |
+| Basic memory |  |  | + Episodic/semantic split |
+| User profiles |  |  | New feature |
+| Performance metrics | Limited |  Comprehensive | Full analytics |
+| Feedback logging |  |  | + Learning integration |
+| Conversation history |  |  | + Context preservation |
+| Analytics | Limited |  Advanced | Aggregation pipelines |
+| Data cleanup |  |  | Automatic retention |
+| Importance weighting |  |  | Smart memory retention |
 
 ## Benefits
 
@@ -388,7 +388,7 @@ export MONGODB_CLUSTER="cluster0.mongodb.net"  # Optional
 
 ## Next Steps
 
-1. ✅ MongoDB Manager implemented
+1.  MongoDB Manager implemented
 2. ⏳ Integrate with Intent Router
 3. ⏳ Add memory retrieval to engines
 4. ⏳ Implement learning from feedback
@@ -404,11 +404,11 @@ python -c "
 from src.memory.mongodb_manager import MongoDBManager
 mongo = MongoDBManager()
 if mongo.connect():
-    print('✅ MongoDB connected')
+    print(' MongoDB connected')
     stats = mongo.get_database_stats()
-    print(f'📊 Database stats: {stats}')
+    print(f' Database stats: {stats}')
 else:
-    print('⚠️ MongoDB not configured (will run without persistent storage)')
+    print(' MongoDB not configured (will run without persistent storage)')
 "
 ```
 

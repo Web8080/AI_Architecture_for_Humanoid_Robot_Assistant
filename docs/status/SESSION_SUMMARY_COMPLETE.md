@@ -125,7 +125,7 @@ Chapo bot's biggest problem:
 User: "My name is John"
 Bot: "Nice to meet you!"
 User: "What's my name?"
-Chapo: "I don't know" ❌
+Chapo: "I don't know" 
 ```
 
 Our solution:
@@ -133,7 +133,7 @@ Our solution:
 User: "My name is John"
 Bot: "Nice to meet you, John!"
 User: "What's my name?"
-Our bot: "Your name is John" ✅
+Our bot: "Your name is John" 
 ```
 
 How:
