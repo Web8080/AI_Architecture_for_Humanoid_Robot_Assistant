@@ -15,15 +15,15 @@ By the end of this study period, you should be able to:
 -  Implement RAG (Retrieval-Augmented Generation) systems
 -  Optimize models for edge deployment (quantization, TensorRT)
 -  Build production-ready APIs with FastAPI
--  Understand your existing chapo-bot architecture deeply
+-  Understand  existing chapo-bot architecture deeply
 
 ---
 
 ##  Week 1: Foundational Concepts
 
-### Day 1-2: Review Your Chapo-Bot Architecture
+### Day 1-2: Review  Chapo-Bot Architecture
 
-**Study your existing code**:
+**Study  existing code**:
 ```bash
 cd /Users/user/chapo-bot-backend/backend/
 
@@ -149,7 +149,7 @@ from datasets import load_dataset
 tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
 model = AutoModelForSequenceClassification.from_pretrained("bert-base-uncased", num_labels=10)
 
-# Prepare your data (start with public dataset, then use your own)
+# Prepare  data (start with public dataset, then use  own)
 dataset = load_dataset("emotion")
 
 # Tokenize
@@ -234,11 +234,11 @@ print("Top results:", [documents[i] for i in indices[0]])
 
 **Practical Exercise**:
 ```python
-# Convert your model to ONNX:
+# Convert  model to ONNX:
 import torch
 
-model = YourModel()  # Load your trained model
-dummy_input = torch.randn(1, 128)  # Adjust to your input shape
+model = Model()  # Load  trained model
+dummy_input = torch.randn(1, 128)  # Adjust to  input shape
 
 torch.onnx.export(
     model,
@@ -291,7 +291,7 @@ class PredictionResponse(BaseModel):
 
 @app.post("/predict", response_model=PredictionResponse)
 async def predict(request: PredictionRequest):
-    # Load your model and predict
+    # Load  model and predict
     intent = "fetch_object"  # Replace with actual prediction
     confidence = 0.95
     return PredictionResponse(intent=intent, confidence=confidence)
@@ -336,7 +336,7 @@ CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
 ```python
 import mlflow
 
-# Track your training:
+# Track  training:
 with mlflow.start_run():
     # Log parameters
     mlflow.log_param("learning_rate", 0.001)
@@ -387,7 +387,7 @@ with mlflow.start_run():
 # Steps:
 1. Collect 100 sample robot commands (or use public dataset)
 2. Label them with intents (navigate, fetch, greeting, etc.)
-3. Fine-tune BERT on your data
+3. Fine-tune BERT on  data
 4. Convert to ONNX
 5. Build FastAPI endpoint
 6. Test with Docker
@@ -438,7 +438,7 @@ with mlflow.start_run():
 
 ---
 
-##  Setup Your Development Environment
+##  Setup  Development Environment
 
 ### Essential Tools
 
@@ -510,7 +510,7 @@ python -c "from sentence_transformers import SentenceTransformer; print(' Senten
 - [ ] Docker tutorial (3 hours)
 - [ ] Containerize ML service (2 hours)
 - [ ] MLflow quickstart (2 hours)
-- [ ] Track your experiments (2 hours)
+- [ ] Track  experiments (2 hours)
 
 **Total**: ~18 hours (2-3 hours/day for 1 week)
 
@@ -566,7 +566,7 @@ python -c "from sentence_transformers import SentenceTransformer; print(' Senten
 
 ### Mini-Project 1: Chapo-Bot Extension (2-4 hours)
 
-**Goal**: Get comfortable with your existing architecture
+**Goal**: Get comfortable with  existing architecture
 
 ```python
 # Add a new intent to chapo-bot:
@@ -677,7 +677,7 @@ You'll be ready because you'll have:
 3. **FastAPI Docs**: https://fastapi.tiangolo.com/
 4. **LangChain Docs**: https://python.langchain.com/
 
-### Your Local Resources:
+###  Local Resources:
 1. **Chapo-Bot**: `/Users/user/chapo-bot-backend/`
 2. **This Project**: `/Users/user/humaniod_robot_assitant/`
 3. **Our Docs**: `docs/` folder
@@ -750,9 +750,9 @@ When ready, we'll start with:
 
 ---
 
-**Start with Week 1, Day 1-2: Review your chapo-bot code! Understanding what you've already built is the fastest path to success.** 
+**Start with Week 1, Day 1-2: Review  chapo-bot code! Understanding what you've already built is the fastest path to success.** 
 
-**Take your time - solid foundations lead to faster development later.**
+**Take  time - solid foundations lead to faster development later.**
 
 ---
 
