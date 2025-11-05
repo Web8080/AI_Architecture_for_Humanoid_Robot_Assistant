@@ -17,6 +17,7 @@
 -  Intent Router Framework (84 normalizations, 42 mappings)
 -  Safety Monitor Engine (Fall detection, 999 emergency calling)
 -  Home Assistant Engines (Weather, News, Alarm, Shopping, Music, Calendar)
+-  Healthcare - (cognitive_assessment_engine, emergency_response_engine, hygiene_assistance_engine, medication_dispensing_engine, mobility_assistance_engine, nutrition_tracking_engine, pain_assessment_engine, patient_monitoring_engine, rehabilitation_exercise_engine, telehealth_facilitation_engine, wound_care_monitoring_engine)
 
 **Active Development:**
 -  Building remaining 494 engines across 4 categories
